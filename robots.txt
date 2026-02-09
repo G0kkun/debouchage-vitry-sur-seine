@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Interdire l'accès aux dossiers système
+Disallow: /css/
+Disallow: /js/
+Disallow: /images/
+
+# Pages à ne pas indexer
+Disallow: /mentions-legales.html
+Disallow: /politique-confidentialite.html
+
+# Sitemap intentionnellement non mentionné ici
+# Il sera soumis directement à Google Search Console
