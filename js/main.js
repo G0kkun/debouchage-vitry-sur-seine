@@ -4,49 +4,118 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ===================================
-    // 1. MENU MOBILE
-    // ===================================
-    const menuToggle = document.getElementById('menuToggle');
-    const menuOverlay = document.getElementById('menuOverlay');
-    const menuClose = document.getElementById('menuClose');
+// ===================================
+// 1. MENU MOBILE
+// ===================================
+const menuToggle = document.getElementById('menuToggle');
+const menuOverlay = document.getElementById('menuOverlay');
+const menuClose = document.getElementById('menuClose');
 
-    if (menuToggle && menuOverlay) {
-        menuToggle.addEventListener('click', function() {
-            menuOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
+if (menuToggle && menuOverlay) {
+    menuToggle.addEventListener('click', function() {
+        menuOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+    
+    if (menuClose) {
+        menuClose.addEventListener('click', function() {
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
         });
-
-        if (menuClose) {
-            menuClose.addEventListener('click', function() {
-                menuOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            });
+    }
+    
+    menuOverlay.addEventListener('click', function(e) {
+        if (e.target === menuOverlay || e.target.classList.contains('menu-overlay-bg')) {
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
         }
-
-        menuOverlay.addEventListener('click', function(e) {
-            if (e.target === menuOverlay || e.target.classList.contains('menu-overlay-bg')) {
-                menuOverlay.classList.remove('active');
-                document.body.style.overflow = '';
+    });
+    
+    // MODIFIÉ : Fermer le menu seulement pour les liens NORMAUX, pas le dropdown
+    const menuLinks = menuOverlay.querySelectorAll('.menu-link:not(.menu-link-dropdown)');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+    
+    // NOUVEAU : Gestion du sous-menu "Autres services"
+    const dropdownToggle = document.querySelector('.menu-link-dropdown');
+    const submenu = document.querySelector('.menu-submenu');
+    
+    if (dropdownToggle && submenu) {
+        dropdownToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Toggle le sous-menu
+            submenu.classList.toggle('active');
+            
+            // Change la flèche
+            const arrow = this.querySelector('.menu-link-arrow');
+            if (arrow) {
+                arrow.textContent = submenu.classList.contains('active') ? '▲' : '▼';
             }
         });
-
-        const menuLinks = menuOverlay.querySelectorAll('.menu-link');
-        menuLinks.forEach(link => {
+        
+        // Les liens du sous-menu ferment le menu normalement
+        const sublinks = submenu.querySelectorAll('.menu-sublink');
+        sublinks.forEach(link => {
             link.addEventListener('click', function() {
                 menuOverlay.classList.remove('active');
                 document.body.style.overflow = '';
             });
         });
     }
+}
 
+    // ===================================
+// MENU MOBILE - SOUS-MENU "AUTRES SERVICES"
+// ===================================
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownToggle = document.querySelector('.menu-link-dropdown');
+    const submenu = document.querySelector('.menu-submenu');
+    
+    if (dropdownToggle && submenu) {
+        // Gérer le clic/touch
+        dropdownToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Toggle le sous-menu
+            submenu.classList.toggle('active');
+            
+            // Change la flèche
+            const arrow = this.querySelector('.menu-link-arrow');
+            if (arrow) {
+                arrow.textContent = submenu.classList.contains('active') ? '▲' : '▼';
+            }
+            
+            console.log('Submenu toggled:', submenu.classList.contains('active')); // Debug
+        });
+        
+        // Support touch pour mobile
+        dropdownToggle.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            submenu.classList.toggle('active');
+            
+            const arrow = this.querySelector('.menu-link-arrow');
+            if (arrow) {
+                arrow.textContent = submenu.classList.contains('active') ? '▲' : '▼';
+            }
+        });
+    } else {
+        console.error('Menu dropdown ou submenu non trouvé'); // Debug
+    }
+});
     // ===================================
     // 2. CARTE LEAFLET
     // ===================================
-    const VILLE_SLUG = 'vitry-sur-seine';
-    const VILLE_NOM = 'Vitry-sur-Seine';
-    const GPS_LAT = 48.7875;
-    const GPS_LON = 2.3933;
+    const VILLE_SLUG = 'tours';
+    const VILLE_NOM = 'Tours';
+    const GPS_LAT = 47.3941;
+    const GPS_LON = 0.6848;
     
     const mapElement = document.getElementById(VILLE_SLUG + '-map');
     
@@ -103,16 +172,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (nextSlotElement) {
         function updateNextSlot() {
             const now = new Date();
-            const minutes = now.getMinutes();
-            const hours = now.getHours();
+            // Ajouter 25 minutes à l'heure actuelle
+            const nextSlot = new Date(now.getTime() + 25 * 60 * 1000);
             
-            let nextMinutes = Math.ceil(minutes / 15) * 15;
-            let nextHours = hours;
-            
-            if (nextMinutes === 60) {
-                nextMinutes = 0;
-                nextHours = (nextHours + 1) % 24;
-            }
+            const nextHours = nextSlot.getHours();
+            const nextMinutes = nextSlot.getMinutes();
             
             const timeString = `${String(nextHours).padStart(2, '0')}h${String(nextMinutes).padStart(2, '0')}`;
             nextSlotElement.textContent = timeString;

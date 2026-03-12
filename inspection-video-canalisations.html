@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspection Vidéo Canalisations Vitry-sur-Seine | Caméra Endoscopique HD 24/7</title>
+    <meta name="description" content="Expert inspection vidéo canalisations à Vitry-sur-Seine. Caméra endoscopique HD, diagnostic précis, localisation des problèmes, rapport vidéo détaillé. Intervention 24/7. ☎️ 09 80 80 55 05">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://debouchage-canalisation-vitry-sur-seine.fr/inspection-video-canalisations" />
+
+    <!-- Google Fonts (optimisé) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-item top-bar-urgent">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Prochain créneau : <strong id="next-slot">Chargement...</strong></span>
+            </div>
+            <div class="top-bar-item top-bar-activity">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+                <span id="technician-activity">Technicien avec caméra HD disponible sur Vitry-sur-Seine</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo-artiserv-debouchage.webp" alt="Artiserv Débouchage" class="logo-img">
+            </a>
+            
+            <!-- Bouton hamburger -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Menu desktop -->
+            <nav class="nav-menu-desktop">
+                <a href="index.html">Accueil</a>
+                <a href="debouchage-canalisations.html">Débouchage</a>
+                <a href="curage-canalisations.html">Curage</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle">
+                        Autres services
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; margin-left: 4px;">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="inspection-video-canalisations.html" class="active">Inspection vidéo</a>
+                        <a href="pompage-canalisations.html">Pompage</a>
+                    </div>
+                </div>
+                <a href="contact.html">Contact</a>
+            </nav>
+            
+            <a href="tel:09 80 80 55 05" class="phone-cta">
+                <svg class="phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                09 80 80 55 05
+            </a>
+        </div>
+    </header>
+
+    <!-- Menu Overlay Full Screen -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-overlay-bg"></div>
+        <div class="menu-overlay-content">
+            <button class="menu-close" id="menuClose" aria-label="Fermer le menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            
+            <div class="menu-logo">
+                <img src="images/logo-artiserv-blanc.webp" alt="Artiserv Débouchage">
+            </div>
+            
+            <nav class="menu-nav">
+                <a href="index.html" class="menu-link">
+                    <span class="menu-link-number">01</span>
+                    <span class="menu-link-text">Accueil</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+                <a href="debouchage-canalisations.html" class="menu-link">
+                    <span class="menu-link-number">02</span>
+                    <span class="menu-link-text">Débouchage</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+                <a href="curage-canalisations.html" class="menu-link">
+                    <span class="menu-link-number">03</span>
+                    <span class="menu-link-text">Curage</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+                <div class="menu-link menu-link-dropdown">
+                    <span class="menu-link-number">04</span>
+                    <span class="menu-link-text">Autres services</span>
+                    <span class="menu-link-arrow">▼</span>
+                </div>
+                <div class="menu-submenu">
+                    <a href="inspection-video-canalisations.html" class="menu-sublink">
+                        <span class="menu-link-number">04-1</span>
+                        <span class="menu-sublink-text">Inspection vidéo</span>
+                    </a>
+                    <a href="pompage-canalisations.html" class="menu-sublink">
+                        <span class="menu-link-number">04-2</span>
+                        <span class="menu-sublink-text">Pompage</span>
+                    </a>
+                </div>
+                <a href="contact.html" class="menu-link">
+                    <span class="menu-link-number">05</span>
+                    <span class="menu-link-text">Contact</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+            </nav>
+            
+            <div class="menu-cta">
+                <a href="tel:09 80 80 55 05" class="menu-phone-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <div class="menu-phone-content">
+                        <span class="menu-phone-label">Urgence 24/7</span>
+                        <span class="menu-phone-number">09 80 80 55 05</span>
+                    </div>
+                </a>
+                <div class="menu-location">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Vitry-sur-Seine, 94</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Inspection Vidéo des Canalisations à <span class="highlight">Vitry-sur-Seine</span></h1>
+                <p class="hero-subtitle">
+                    Expert en inspection vidéo par caméra endoscopique HD à Vitry-sur-Seine et dans le Val-de-Marne. 
+                    Diagnostic précis de vos canalisations, localisation des bouchons, fissures et racines. 
+                    Rapport vidéo détaillé remis après intervention. Équipement professionnel haute définition.
+                </p>
+                
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                        <span>Caméra endoscopique HD</span>
+                    </div>
+                    <div class="hero-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                        <span>Diagnostic précis et rapide</span>
+                    </div>
+                    <div class="hero-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                        <span>Rapport vidéo détaillé</span>
+                    </div>
+                    <div class="hero-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                        <span>Localisation exacte des problèmes</span>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="tel:09 80 80 55 05" class="btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        Appelez maintenant
+                    </a>
+                    <a href="contact.html" class="btn-secondary">
+                        Devis gratuit
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <picture>
+                    <img src="images/hero-inspection-video.webp" alt="Inspection vidéo canalisations professionnelle à Vitry-sur-Seine">
+                </picture>
+                
+                <div class="floating-badge floating-badge-1">
+                    <div class="badge-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 7l-7 5 7 5V7z"></path>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                    </div>
+                    <div class="badge-text">
+                        <span class="badge-label">Qualité</span>
+                        <span class="badge-value">Full HD</span>
+                    </div>
+                </div>
+                
+                <div class="floating-badge floating-badge-2">
+                    <div class="badge-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <div class="badge-text">
+                        <span class="badge-label">Intervention</span>
+                        <span class="badge-value">-30 min</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bandeau Orange -->
+    <div class="emergency-banner">
+        <div class="container emergency-container">
+            <div class="emergency-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+                <span>Urgence 24/7</span>
+            </div>
+            <div class="emergency-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Arrivée en 30 min</span>
+            </div>
+            <div class="emergency-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span>Rapport vidéo inclus</span>
+            </div>
+            <div class="emergency-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <span>Caméra HD professionnelle</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Introduction -->
+    <section class="section">
+        <div class="container">
+            <h2>Spécialiste de l'<span class="highlight">inspection vidéo par caméra</span> à Vitry-sur-Seine</h2>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                <a href="index.html" style="text-decoration: none; color: inherit;"><strong><span class="brand-name"><span class="arti">ARTI</span><span class="serv">SERV</span></span> Débouchage</strong></a> intervient à Vitry-sur-Seine et dans le Val-de-Marne pour l'<strong>inspection vidéo professionnelle de vos canalisations</strong>. 
+                Notre <strong>caméra endoscopique haute définition</strong> permet un diagnostic précis de l'état de vos réseaux d'évacuation, localise les problèmes et identifie leur nature exacte.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                L'<strong>inspection vidéo des canalisations</strong> est la méthode la plus efficace pour <strong>diagnostiquer avec précision</strong> les problèmes d'évacuation. 
+                Notre équipement professionnel permet d'explorer jusqu'à 100 mètres de canalisations, d'identifier les bouchons, fissures, racines, affaissements ou corrosions, 
+                et de localiser exactement leur position. Un <strong>rapport vidéo complet</strong> vous est remis après chaque intervention.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+                Zone d'intervention : <strong>Vitry-sur-Seine</strong>, les communes environnantes et toutes les communes du Val-de-Marne. 
+                <strong>Intervention d'urgence en moins de 30 minutes</strong> avec équipement vidéo professionnel.
+            </p>
+        </div>
+    </section>
+
+    <!-- Types d'inspection - Grille Bento -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2>Nos prestations d'<span class="highlight">inspection vidéo</span></h2>
+            
+            <div class="services-bento">
+                <!-- Inspection Complète - Large -->
+                <div class="bento-item span-2" style="background-image: url('images/inspection-video-complete.webp');" aria-label="Inspection vidéo complète à Vitry-sur-Seine - diagnostic intégral du réseau">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Inspection Vidéo Complète</h3>
+                        <p class="bento-desc">Diagnostic intégral de votre réseau d'évacuation par caméra HD. Exploration complète, identification de tous les problèmes, localisation précise. Rapport vidéo détaillé avec recommandations.</p>
+                    </div>
+                    <div class="bento-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Diagnostic Bouchon - Vertical -->
+                <div class="bento-item span-v-2" style="background-image: url('images/inspection-localisation-bouchon.webp');" aria-label="Diagnostic et localisation bouchon à Vitry-sur-Seine - inspection caméra ciblée">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Localisation de Bouchons</h3>
+                        <p class="bento-desc">Inspection ciblée pour localiser précisément un bouchon. Identification de sa nature : graisses, racines, tartre, corps étranger. Profondeur exacte, distance depuis le regard d'accès.</p>
+                    </div>
+                    <div class="bento-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Réseaux Extérieurs -->
+                <div class="bento-item" style="background-image: url('images/inspection-reseau-exterieur.webp');" aria-label="Inspection réseaux extérieurs à Vitry-sur-Seine - canalisations enterrées">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Réseaux Extérieurs Enterrés</h3>
+                        <p class="bento-desc">Inspection des canalisations enterrées, évacuations EP/EU, fosses septiques. Détection fissures, racines, affaissements. Caméra longue portée jusqu'à 100m.</p>
+                    </div>
+                    <div class="bento-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Pré-Achat Immobilier -->
+                <div class="bento-item" style="background-image: url('images/inspection-pre-achat.webp');" aria-label="Inspection pré-achat immobilier à Vitry-sur-Seine - diagnostic état canalisations">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Inspection Pré-Achat Immobilier</h3>
+                        <p class="bento-desc">Vérification complète avant achat maison/immeuble. État des canalisations, raccordement tout-à-l'égout, conformité. Rapport détaillé pour négociation prix.</p>
+                    </div>
+                    <div class="bento-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Contrôle Après Travaux -->
+                <div class="bento-item" style="background-image: url('images/inspection-apres-travaux.webp');" aria-label="Contrôle après travaux à Vitry-sur-Seine - vérification réparations canalisations">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Contrôle Après Travaux</h3>
+                        <p class="bento-desc">Vérification après débouchage, curage ou réparations. Contrôle qualité des interventions. Confirmation de la résolution du problème. Rapport vidéo avant/après.</p>
+                    </div>
+                    <div class="bento-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Copropriétés -->
+                <div class="bento-item" style="background-image: url('images/inspection-copropriete.webp');" aria-label="Inspection copropriétés à Vitry-sur-Seine - diagnostic réseaux collectifs">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Copropriétés & Immeubles</h3>
+                        <p class="bento-desc">Diagnostic des réseaux collectifs, colonnes, descentes EP/EU. Inspection préventive annuelle. Identification des zones à risque. Contrats d'entretien disponibles.</p>
+                    </div>
+                    <div class="bento-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pourquoi l'inspection vidéo ? -->
+    <section class="section">
+        <div class="container">
+            <h2>Pourquoi faire une <span class="highlight">inspection vidéo</span> ?</h2>
+            
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <h3>Diagnostic Précis et Fiable</h3>
+                    <p>Visualisation directe de l'intérieur des canalisations en haute définition. Identification exacte de la nature et de la cause du problème. Plus de devinettes : vous voyez réellement l'état de vos canalisations.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Localisation Exacte des Problèmes</h3>
+                    <p>La caméra mesure la distance parcourue et enregistre la position GPS. Localisation précise du bouchon ou de la fissure. Évite les excavations inutiles et réduit considérablement les coûts de réparation.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Prévention et Anticipation</h3>
+                    <p>Détecte les problèmes avant qu'ils ne deviennent graves. Identifie les zones à risque : fissures débutantes, racines naissantes, usure prématurée. Planification des interventions avant l'urgence.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-euro-sign"></i>
+                    </div>
+                    <h3>Économies Importantes</h3>
+                    <p>Évite les diagnostics à l'aveugle et les interventions inutiles. Pas d'excavation exploratoire coûteuse. Intervention ciblée = moins de temps, moins de frais. Investissement rentabilisé dès la première utilisation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Que détecte l'inspection vidéo ? -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2>Que permet de <span class="highlight">détecter</span> l'inspection vidéo ?</h2>
+            
+            <div class="advantages-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>Bouchons et Obstructions</h3>
+                    <p><strong>Localisation et identification précises</strong> : graisses solidifiées, amas de papier, lingettes, objets coincés, accumulation de tartre ou calcaire. Nature exacte du bouchon visible en vidéo.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Racines Infiltrées</h3>
+                    <p>Détection des <strong>racines d'arbres pénétrant dans les canalisations</strong> enterrées. Évaluation de l'ampleur de l'infiltration. Localisation exacte pour intervention ciblée par hydrocurage.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Fissures et Cassures</h3>
+                    <p>Identification des <strong>fissures, cassures, joints défaillants</strong>. Évaluation de la gravité : fissure superficielle ou cassure nécessitant remplacement. Prévention des infiltrations d'eaux souterraines.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                    <h3>Affaissements de Canalisations</h3>
+                    <p>Détection des <strong>affaissements, déformations ou contre-pentes</strong>. Zones où l'eau stagne anormalement. Causés par tassement du sol, charge excessive, vieillissement. Nécessitent réparation rapide.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-droplet"></i>
+                    </div>
+                    <h3>Corrosion et Usure</h3>
+                    <p>Évaluation de l'<strong>état général des canalisations</strong>. Corrosion des canalisations métalliques (fonte, acier). Usure prématurée du PVC, dégradation du grès. Estimation de la durée de vie restante.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Malfaçons de Construction</h3>
+                    <p>Identification des <strong>défauts de pose ou raccordements</strong> : mauvais alignement, pentes insuffisantes, raccords non étanches. Utile avant achat immobilier ou en cas de litiges avec constructeur.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre Processus -->
+    <section class="section">
+        <div class="container">
+            <h2>Comment se déroule une <span class="highlight">inspection vidéo</span> ?</h2>
+            
+            <div class="process-container">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Accès et Préparation</h3>
+                    <p>Identification des points d'accès (regard, bouche d'égout, WC). Préparation du matériel : caméra HD, écran de contrôle, câble. Protection de la zone d'intervention.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Insertion de la Caméra</h3>
+                    <p>Introduction de la caméra endoscopique dans la canalisation. Progression lente et contrôlée tout au long du réseau. Éclairage LED puissant pour visibilité optimale même en conditions difficiles.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Exploration et Enregistrement</h3>
+                    <p>Exploration complète du réseau avec enregistrement vidéo HD. Capture d'images des anomalies détectées. Mesure de distance et localisation GPS des problèmes. Commentaires audio du technicien.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Rapport et Recommandations</h3>
+                    <p>Analyse des images et rédaction du rapport détaillé. Remise du support vidéo (clé USB ou lien de téléchargement). Explications claires des problèmes identifiés. Devis pour interventions nécessaires.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quand faire une inspection vidéo ? -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2>Quand réaliser une <span class="highlight">inspection vidéo</span> ?</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                L'<strong>inspection vidéo par caméra</strong> est recommandée dans de nombreuses situations. Elle permet d'éviter les diagnostics à l'aveugle et les interventions inutiles.
+            </p>
+            <div class="advantages-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Problème d'évacuation persistant</h3>
+                    <p>Évacuation lente qui revient malgré plusieurs débouchages. Cause non identifiée : bouchon profond, racines, affaissement ? L'<strong>inspection vidéo révèle la vraie nature</strong> du problème.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Avant achat immobilier</h3>
+                    <p>Vérification de l'<strong>état réel des canalisations</strong> avant achat maison/immeuble. Détection de problèmes cachés : fissures, racines, vétusté. Élément de négociation du prix. Évite mauvaises surprises.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Entretien préventif</h3>
+                    <p><strong>Inspection régulière recommandée</strong> pour copropriétés, restaurants, industries. Détecte problèmes avant qu'ils deviennent graves. Planification interventions pendant périodes calmes. Évite urgences coûteuses.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <h3>Avant travaux importants</h3>
+                    <p>Diagnostic avant <a href="curage-canalisations.html">curage haute pression</a>, <strong>chemisage ou remplacement</strong>. Évaluation précise de l'ampleur des travaux. Choix de la technique adaptée. Budget réaliste basé sur faits objectifs.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <h3>Contrôle après intervention</h3>
+                    <p>Vérification de la <strong>qualité des travaux effectués</strong> : débouchage, curage, réparations. Confirmation visuelle de la résolution du problème. Rapport vidéo avant/après pour comparaison objective.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Construction neuve ou rénovation</h3>
+                    <p><strong>Réception de chantier</strong> : vérification conformité installation. Détection malfaçons : mauvais raccordements, pentes insuffisantes. Constitution preuve en cas de litige avec constructeur ou artisan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tarifs -->
+    <section class="section">
+        <div class="container">
+            <h2>Tarifs <span class="highlight">inspection vidéo</span> et devis gratuit</h2>
+            <p style="text-align: left; margin: 0 auto 3rem; color: var(--color-gray-700); font-size: 1.1rem;">
+                Devis gratuit sur place. Nos tarifs d'inspection vidéo dépendent de la longueur du réseau et de la complexité d'accès.
+            </p>
+            
+            <div class="tarifs-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <!-- Carte 1 : Inspection Simple (Featured) -->
+                <div class="tarif-card featured">
+                    <div class="tarif-badge">Le plus demandé</div>
+                    <div class="tarif-header">
+                        <div class="tarif-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 7l-7 5 7 5V7z"></path>
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                            </svg>
+                        </div>
+                        <div class="tarif-info">
+                            <h3 class="tarif-title">Inspection Vidéo Simple</h3>
+                            <div class="tarif-price">
+                                <span class="price-amount">À partir de 120€</span>
+                                <span class="price-label">TTC</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul class="tarif-features">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Caméra endoscopique HD
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Jusqu'à 30 mètres de canalisation
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Rapport photos inclus
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Déplacement inclus (Vitry-sur-Seine)
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Carte 2 : Inspection Complète -->
+                <div class="tarif-card">
+                    <div class="tarif-header">
+                        <div class="tarif-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </div>
+                        <div class="tarif-info">
+                            <h3 class="tarif-title">Inspection Complète + Rapport</h3>
+                            <div class="tarif-price">
+                                <span class="price-amount">À partir de 159€</span>
+                                <span class="price-label">TTC</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="tarif-features">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Inspection intégrale du réseau
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Enregistrement vidéo HD complet
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Rapport détaillé avec photos
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Fichier vidéo remis (USB/lien)
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Carte 3 : Inspection Longue Distance -->
+                <div class="tarif-card">
+                    <div class="tarif-header">
+                        <div class="tarif-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="tarif-info">
+                            <h3 class="tarif-title">Réseaux Extérieurs Longs</h3>
+                            <div class="tarif-price">
+                                <span class="price-amount">À partir de 239€</span>
+                                <span class="price-label">TTC</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul class="tarif-features">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Caméra longue portée (jusqu'à 100m)
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Réseaux enterrés extérieurs
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Localisation GPS des anomalies
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Rapport vidéo complet remis
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Carte 4 : Devis Gratuit -->
+                <div class="tarif-card">
+                    <div class="tarif-header">
+                        <div class="tarif-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <div class="tarif-info">
+                            <h3 class="tarif-title">Devis Gratuit</h3>
+                            <div class="tarif-price">
+                                <span class="price-amount">0€</span>
+                                <span class="price-label">Sans engagement</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul class="tarif-features">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Évaluation sur place gratuite
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Devis détaillé sans engagement
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Tarifs clairs, pas de frais cachés
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Conseils personnalisés inclus
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="contact.html" class="btn-primary">
+                    Demander un devis gratuit
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container cta-content">
+            <h2>Besoin d'une inspection vidéo ? Diagnostic rapide et précis !</h2>
+            <p>Notre technicien avec caméra HD arrive en moins de 30 minutes à Vitry-sur-Seine et dans le Val-de-Marne. Disponibles 24h/24, 7j/7.</p>
+            <a href="tel:09 80 80 55 05" class="btn-cta-large">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                Appelez maintenant
+            </a>
+        </div>
+    </section>
+
+ <!-- FAQ Inspection Vidéo -->
+    <section class="section contact-faq faq-accordions">
+        <div class="container">
+            <h2>Questions fréquentes sur l'<span class="highlight">inspection vidéo</span></h2>
+            <div class="faq-grid">
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Comment fonctionne une caméra d'inspection de canalisations ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>La caméra endoscopique est un système vidéo miniaturisé conçu pour explorer les canalisations.</strong></p>
+                            <ul class="tarif-features">
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Tête de caméra HD :</strong> Compacte (20-40mm de diamètre), étanche, résistante aux produits chimiques</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Éclairage LED :</strong> Puissant pour visibilité optimale même dans les canalisations sales</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Câble flexible :</strong> Jusqu'à 100 mètres de longueur selon les modèles professionnels</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Écran de contrôle :</strong> Visualisation en temps réel, enregistrement vidéo HD</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Mesure de distance :</strong> Compteur intégré pour localiser précisément les anomalies</span>
+                                </li>
+                            </ul>
+                            <p>Le technicien insère la caméra dans la canalisation, la fait progresser lentement tout en visualisant et enregistrant les images en temps réel.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Combien de temps dure une inspection vidéo ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>La durée dépend de la longueur du réseau et de la complexité de l'installation :</strong></p>
+                            <ul class="tarif-features">
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Inspection simple ciblée</strong> (localisation d'un bouchon) : 30 minutes à 1 heure</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Inspection complète maison individuelle</strong> (30-40m de réseau) : 1 à 2 heures</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Réseau enterré extérieur long</strong> (jusqu'à 100m) : 2 à 3 heures</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Copropriété ou immeuble</strong> (réseaux complexes) : demi-journée à journée complète</span>
+                                </li>
+                            </ul>
+                            <p>Le rapport détaillé et le montage vidéo sont généralement remis dans les 24-48 heures suivant l'inspection.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Faut-il préparer les canalisations avant l'inspection ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>Pour une inspection optimale, les canalisations doivent idéalement être débarrassées des obstructions majeures.</strong></p>
+                            <ul class="tarif-features">
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>En cas de bouchon complet :</strong> <a href="debouchage-canalisations.html">Un débouchage préalable</a> peut être nécessaire pour permettre le passage de la caméra</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Canalisations très encrassées :</strong> Un curage préalable améliore la visibilité et la qualité de l'inspection</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Évacuation lente mais fonctionnelle :</strong> L'inspection peut généralement se faire directement</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>De votre côté :</strong> Assurez l'accès aux regards d'évacuation et points d'entrée du réseau</span>
+                                </li>
+                            </ul>
+                            <p>Notre technicien évalue la situation sur place et vous conseille sur la meilleure approche : inspection directe ou préparation préalable.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Que comprend le rapport d'inspection vidéo ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>Le rapport d'inspection vidéo est un document complet qui détaille l'état de vos canalisations.</strong></p>
+                            <ul class="tarif-features">
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Enregistrement vidéo HD complet</strong> de l'exploration (remis sur clé USB ou lien de téléchargement)</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Photos des anomalies détectées :</strong> bouchons, fissures, racines, affaissements</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Localisation précise des problèmes</strong> (distance depuis le point d'accès, coordonnées GPS si extérieur)</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Évaluation de l'état général</strong> du réseau et estimation de sa durée de vie restante</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Recommandations techniques :</strong> interventions nécessaires, priorités, solutions adaptées</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Devis détaillé</strong> pour les travaux éventuellement nécessaires</span>
+                                </li>
+                            </ul>
+                            <p>Ce rapport constitue une preuve objective de l'état de vos canalisations, utile pour négocier un achat immobilier ou justifier des travaux.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>L'inspection vidéo est-elle utile avant un achat immobilier ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>Oui, l'inspection vidéo avant achat immobilier est un investissement très rentable qui peut vous éviter de mauvaises surprises.</strong></p>
+                            <ul class="tarif-features">
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Détection de problèmes cachés :</strong> Racines infiltrées, fissures, affaissements, canalisations vétustes</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Estimation des travaux nécessaires :</strong> Permet d'anticiper les coûts de réparation ou remplacement</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Argument de négociation :</strong> Le rapport vidéo est une preuve objective pour négocier le prix d'achat</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Vérification du raccordement :</strong> Conformité du raccordement au tout-à-l'égout ou état de la fosse septique</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Tranquillité d'esprit :</strong> Achetez en toute connaissance de cause, sans surprise désagréable après emménagement</span>
+                                </li>
+                            </ul>
+                            <p>Le coût d'une inspection (189-449€) est dérisoire comparé au prix d'un remplacement complet de canalisations (plusieurs milliers d'euros).</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo-artiserv-blanc.webp" alt="Artiserv Débouchage">
+                    </div>
+                    <p>
+                        Votre spécialiste de l'inspection vidéo, débouchage et assainissement à Vitry-sur-Seine et du Val-de-Marne. 
+                        Intervention rapide 24h/24, 7j/7.
+                    </p>                    
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Nos services</h4>
+                    <ul>
+                        <li><a href="debouchage-canalisations.html">Débouchage</a></li>
+                        <li><a href="curage-canalisations.html">Curage</a></li>
+                        <li><a href="inspection-video-canalisations.html">Inspection vidéo</a></li>
+                        <li><a href="pompage-canalisations.html">Pompage</a></li>
+                        <li><span style="color: var(--color-gray-500); cursor: default;">Vidange fosse (bientôt)</span></li>
+                        <li><span style="color: var(--color-gray-500); cursor: default;">Assainissement (bientôt)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="mentions-legales.html">Mentions légales</a></li>
+                        <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <a href="tel:09 80 80 55 05">09 80 80 55 05</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <a href="mailto:artiserv.debouchage@gmail.com">artiserv.debouchage@gmail.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>Vitry-sur-Seine & Val-de-Marne</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 <span class="brand-name brand-name-inverse"><span class="arti">ARTI</span><span class="serv">SERV</span></span> Débouchage - Tous droits réservés</p>
+                <div class="footer-links">
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="politique-confidentialite.html">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta">
+        <a href="tel:09 80 80 55 05" class="floating-btn" aria-label="Appeler">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Barre de consentement cookies -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="cookie-icon">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="1" fill="currentColor"></circle>
+                    <circle cx="8" cy="8" r="1" fill="currentColor"></circle>
+                    <circle cx="16" cy="8" r="1" fill="currentColor"></circle>
+                    <circle cx="9" cy="15" r="1" fill="currentColor"></circle>
+                    <circle cx="15" cy="15" r="1" fill="currentColor"></circle>
+                </svg>
+                <div>
+                    <p><strong>Respect de votre vie privée</strong></p>
+                    <p>Nous utilisons des cookies pour améliorer votre expérience de navigation et analyser notre trafic. 
+                    <a href="politique-confidentialite.html" target="_blank">En savoir plus</a></p>
+                </div>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-btn-reject" id="cookieReject">Refuser</button>
+                <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accepter</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schema FAQ pour Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment fonctionne une caméra d'inspection de canalisations ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La caméra endoscopique est un système vidéo miniaturisé conçu pour explorer les canalisations. Elle comprend une tête de caméra HD compacte (20-40mm de diamètre), étanche et résistante aux produits chimiques, un éclairage LED puissant pour visibilité optimale, un câble flexible jusqu'à 100 mètres de longueur, un écran de contrôle pour visualisation en temps réel et enregistrement vidéo HD, et un compteur intégré pour localiser précisément les anomalies. Le technicien insère la caméra dans la canalisation et la fait progresser lentement tout en visualisant et enregistrant les images en temps réel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de temps dure une inspection vidéo ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La durée dépend de la longueur du réseau et de la complexité de l'installation. Inspection simple ciblée pour localisation d'un bouchon : 30 minutes à 1 heure. Inspection complète maison individuelle (30-40m de réseau) : 1 à 2 heures. Réseau enterré extérieur long (jusqu'à 100m) : 2 à 3 heures. Copropriété ou immeuble avec réseaux complexes : demi-journée à journée complète. Le rapport détaillé et le montage vidéo sont généralement remis dans les 24-48 heures suivant l'inspection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il préparer les canalisations avant l'inspection ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pour une inspection optimale, les canalisations doivent idéalement être débarrassées des obstructions majeures. En cas de bouchon complet, un débouchage préalable peut être nécessaire pour permettre le passage de la caméra. Pour des canalisations très encrassées, un curage préalable améliore la visibilité et la qualité de l'inspection. Si l'évacuation est lente mais fonctionnelle, l'inspection peut généralement se faire directement. De votre côté, assurez l'accès aux regards d'évacuation et points d'entrée du réseau. Notre technicien évalue la situation sur place et vous conseille sur la meilleure approche."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que comprend le rapport d'inspection vidéo ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le rapport d'inspection vidéo est un document complet qui détaille l'état de vos canalisations. Il comprend : enregistrement vidéo HD complet de l'exploration remis sur clé USB ou lien de téléchargement, photos des anomalies détectées (bouchons, fissures, racines, affaissements), localisation précise des problèmes avec distance depuis le point d'accès et coordonnées GPS si extérieur, évaluation de l'état général du réseau et estimation de sa durée de vie restante, recommandations techniques avec interventions nécessaires et priorités, et devis détaillé pour les travaux éventuellement nécessaires. Ce rapport constitue une preuve objective utile pour négocier un achat immobilier ou justifier des travaux."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "L'inspection vidéo est-elle utile avant un achat immobilier ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, l'inspection vidéo avant achat immobilier est un investissement très rentable qui peut vous éviter de mauvaises surprises. Elle permet la détection de problèmes cachés comme racines infiltrées, fissures, affaissements ou canalisations vétustes. Elle offre une estimation des travaux nécessaires pour anticiper les coûts de réparation ou remplacement. Le rapport vidéo est une preuve objective servant d'argument de négociation du prix d'achat. Elle permet la vérification du raccordement au tout-à-l'égout ou état de la fosse septique. Vous achetez en toute connaissance de cause avec tranquillité d'esprit. Le coût d'une inspection (189-449€) est dérisoire comparé au prix d'un remplacement complet de canalisations."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

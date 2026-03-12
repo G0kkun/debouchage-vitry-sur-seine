@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Débouchage Canalisation Vitry-sur-Seine | Artiserv Débouchage - Urgence 24h/24</title>
+    <meta name="description" content="Débouchage de canalisations à Vitry-sur-Seine et en Val-de-Marne. Intervention urgente 24h/24 et 7j/7. Devis gratuit. WC, évier, douche, curage, inspection vidéo.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://debouchage-canalisation-vitry-sur-seine.fr/" />
+
+    <!-- Google Fonts (optimisé) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet"></noscript>
+    <!-- Font Awesome (AJOUTE CETTE LIGNE !) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="preload" as="image" href="images/hero.webp" type="image/webp">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-item top-bar-urgent">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Prochain créneau : <strong id="next-slot">Chargement...</strong></span>
+            </div>
+            <div class="top-bar-item top-bar-activity">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+                <span id="technician-activity">Technicien en route sur Vitry-sur-Seine Nord</span>
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo-artiserv-debouchage.webp" alt="Artiserv Débouchage" class="logo-img">
+            </a>
+            
+            <!-- Bouton hamburger -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Menu desktop -->
+            <nav class="nav-menu-desktop">
+                <a href="index.html" class="active">Accueil</a>
+                <a href="debouchage-canalisations.html">Débouchage</a>
+                <a href="curage-canalisations.html">Curage</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle">
+                        Autres services
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; margin-left: 4px;">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="inspection-video-canalisations.html">Inspection vidéo</a>
+                        <a href="pompage-canalisations.html">Pompage</a>
+                    </div>
+                </div>
+                <a href="contact.html">Contact</a>
+            </nav>
+            
+            <a href="tel:09 80 80 55 05" class="phone-cta">
+                <svg class="phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                09 80 80 55 05
+            </a>
+        </div>
+    </header>
+
+    <!-- Menu Overlay Full Screen -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-overlay-bg"></div>
+        <div class="menu-overlay-content">
+            <button class="menu-close" id="menuClose" aria-label="Fermer le menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            
+            <div class="menu-logo">
+                <img src="images/logo-artiserv-blanc.webp" alt="Artiserv Débouchage">
+            </div>
+            
+            <nav class="menu-nav">
+                <a href="index.html" class="menu-link">
+                    <span class="menu-link-number">01</span>
+                    <span class="menu-link-text">Accueil</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+                <a href="debouchage-canalisations.html" class="menu-link">
+                    <span class="menu-link-number">02</span>
+                    <span class="menu-link-text">Débouchage</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+                <a href="curage-canalisations.html" class="menu-link">
+                    <span class="menu-link-number">03</span>
+                    <span class="menu-link-text">Curage</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+                <div class="menu-link menu-link-dropdown">
+                    <span class="menu-link-number">04</span>
+                    <span class="menu-link-text">Autres services</span>
+                    <span class="menu-link-arrow">▼</span>
+                </div>
+                <div class="menu-submenu">
+                    <a href="inspection-video-canalisations.html" class="menu-sublink">
+                        <span class="menu-link-number">04-1</span>
+                        <span class="menu-sublink-text">Inspection vidéo</span>
+                    </a>
+                    <a href="pompage-canalisations.html" class="menu-sublink">
+                        <span class="menu-link-number">04-2</span>
+                        <span class="menu-sublink-text">Pompage</span>
+                    </a>
+                </div>
+                <a href="contact.html" class="menu-link">
+                    <span class="menu-link-number">05</span>
+                    <span class="menu-link-text">Contact</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+            </nav>
+            
+            <div class="menu-cta">
+                <a href="tel:09 80 80 55 05" class="menu-phone-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <div class="menu-phone-content">
+                        <span class="menu-phone-label">Urgence 24/7</span>
+                        <span class="menu-phone-number">09 80 80 55 05</span>
+                    </div>
+                </a>
+                <div class="menu-location">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Vitry-sur-Seine, 94</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Débouchage de Canalisations à <span class="highlight">Vitry-sur-Seine</span></h1>
+                <p class="hero-subtitle">
+                    Intervention rapide 24h/24 et 7j/7 pour tous vos problèmes de canalisations bouchées. 
+                    Devis gratuit, techniciens qualifiés.
+                </p>
+                
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                        <span>Intervention en moins de 30 minutes</span>
+                    </div>
+                    <div class="hero-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                        <span>Disponible 24h/24, 7 jours sur 7</span>
+                    </div>
+                    <div class="hero-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                        <span>Devis gratuit et sans engagement</span>
+                    </div>
+                    <div class="hero-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                        <span>Techniciens certifiés et équipés</span>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="tel:09 80 80 55 05" class="btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        Appelez maintenant
+                    </a>
+                    <a href="contact.html" class="btn-secondary">
+                        Devis gratuit
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <picture>
+                    <img src="images/hero.webp" alt="Technicien Artiserv débouchage à Vitry-sur-Seine">
+                </picture>
+                
+                <div class="floating-badge floating-badge-1">
+                    <div class="badge-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11l3 3L22 4"></path>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                        </svg>
+                    </div>
+                    <div class="badge-text">
+                        <span class="badge-label">Garantie</span>
+                        <span class="badge-value">Intervention</span>
+                    </div>
+                </div>
+                
+                <div class="floating-badge floating-badge-2">
+                    <div class="badge-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <div class="badge-text">
+                        <span class="badge-label">Délai moyen</span>
+                        <span class="badge-value">30 minutes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bandeau Orange -->
+    <div class="emergency-banner">
+        <div class="container emergency-container">
+            <div class="emergency-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+                <span>Urgence 24/7</span>
+            </div>
+            <div class="emergency-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Arrivée en 30 min</span>
+            </div>
+            <div class="emergency-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span>Devis gratuit</span>
+            </div>
+            <div class="emergency-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <span>98% de satisfaction</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pourquoi choisir Artiserv -->
+    <section class="section">
+        <div class="container">
+            <h2>Pourquoi choisir <span class="brand-name"><span class="arti">ARTI</span><span class="serv">SERV</span></span><span class="highlight"> Débouchage</span> ?</h2>
+            
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Intervention rapide</h3>
+                    <p>Nos équipes interviennent en moins de 30 minutes sur Vitry-sur-Seine et ses alentours. Disponibles 24h/24, 7j/7 pour vos urgences.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Experts qualifiés</h3>
+                    <p>Techniciens certifiés avec plus de 10 ans d'expérience dans le débouchage et l'assainissement.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>Tarifs transparents</h3>
+                    <p>Devis gratuit et détaillé avant intervention. Pas de frais cachés, vous savez exactement ce que vous payez.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Équipement professionnel</h3>
+                    <p>Matériel de pointe : caméra d'inspection, hydrocurage haute pression, pompes professionnelles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos Services - Grille Bento -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2>Nos <span class="highlight">services</span> de débouchage</h2>
+            
+            <div class="services-bento">
+                <!-- Curage - Large -->
+                <a href="curage-canalisations.html" class="bento-item span-2" style="background-image: url('images/Hydrocurage.webp');" aria-label="Photo de techniciens Artiserv effectuant un curage de canalisations avec leur camion professionnel">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Curage de canalisations</h3>
+                        <p class="bento-desc">Nettoyage en profondeur par hydrocurage haute pression pour éliminer définitivement tartre, graisses, calcaire et tous débris. Remise à neuf complète du diamètre de vos tuyaux pour un écoulement optimal.</p>
+                    </div>
+                    <div class="bento-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </a>
+                
+                <!-- Débouchage - Vertical -->
+                <a href="debouchage-canalisations.html" class="bento-item span-v-2" style="background-image: url('images/débouchage canalisation.webp');" aria-label="Technicien Artiserv en train de déboucher des canalisations dans une salle de bain">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Débouchage de canalisations</h3>
+                        <p class="bento-desc">Intervention rapide et efficace pour tous vos problèmes de canalisations bouchées avec notre matériel haute pression professionnel :</p>
+                        <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: var(--color-primary); flex-shrink: 0;">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                                <span style="font-size: 0.9rem; opacity: 0.85;">Débouchage WC et toilettes</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: var(--color-primary); flex-shrink: 0;">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                                <span style="font-size: 0.9rem; opacity: 0.85;">Débouchage évier et lavabo</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: var(--color-primary); flex-shrink: 0;">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                                <span style="font-size: 0.9rem; opacity: 0.85;">Débouchage douche et baignoire</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </a>
+                
+                <!-- Inspection vidéo -->
+                <a href="inspection-video-canalisations.html" class="bento-item" style="background-image: url('images/inspection vidéo.webp');" aria-label="Techniciens Artiserv examinant une caméra d'inspection endoscopique pour diagnostiquer des canalisations">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Inspection vidéo</h3>
+                        <p class="bento-desc">Diagnostic précis de l'état de vos canalisations grâce à notre caméra endoscopique HD. Rapport détaillé fourni.</p>
+                    </div>
+                    <div class="bento-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </a>
+                
+                <!-- Pompage -->
+                <div class="bento-item" style="background-image: url('images/Pompage.webp');" aria-label="Technicien Artiserv utilisant un équipement de pompage professionnel dans un sous-sol inondé">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Pompage</h3>
+                        <p class="bento-desc">Évacuation d'eaux usées, caves inondées ou fosses pleines avec nos camions pompe professionnels.</p>
+                    </div>
+                    <div class="bento-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Vidange fosse -->
+                <div class="bento-item" style="background-image: url('images/vidange fosse.webp');" aria-label="Techniciens Artiserv effectuant la vidange d'une fosse septique dans un jardin résidentiel">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Vidange fosse septique</h3>
+                        <p class="bento-desc">Vidange et entretien complet de fosses septiques et bacs à graisse. Service régulier ou ponctuel.</p>
+                    </div>
+                    <div class="bento-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Assainissement -->
+                <div class="bento-item" style="background-image: url('images/assainissement.webp');" aria-label="Technicien Artiserv réalisant un entretien préventif sur un système d'assainissement extérieur">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Assainissement</h3>
+                        <p class="bento-desc">Entretien préventif et traitement de vos réseaux d'assainissement pour éviter les problèmes futurs.</p>
+                    </div>
+                    <div class="bento-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comment ça marche -->
+    <section class="section">
+        <div class="container">
+            <h2>Comment ça <span class="highlight">marche</span> ?</h2>
+            
+            <div class="process-container">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Vous nous appelez</h3>
+                    <p>Contactez-nous 24h/24 et 7j/7 pour décrire votre problème</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Intervention rapide</h3>
+                    <p>Un technicien arrive chez vous en moins de 30 minutes</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Diagnostic et devis</h3>
+                    <p>Inspection complète et devis gratuit détaillé sur place</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Résolution</h3>
+                    <p>Débouchage efficace et nettoyage de la zone d'intervention</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container cta-content">
+            <h2>Une urgence de débouchage à Vitry-sur-Seine ?</h2>
+            <p>Nos techniciens sont disponibles 24h/24 et 7j/7 pour intervenir rapidement</p>
+            <a href="tel:09 80 80 55 05" class="btn-cta-large">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                09 80 80 55 05
+            </a>
+        </div>
+    </section>
+
+    <!-- Section Tarifs -->
+    <section class="section">
+        <div class="container">
+            <h2>Nos <span class="highlight">tarifs</span> transparents</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem; color: var(--color-gray-700); font-size: 1.1rem;">
+                Devis gratuit avant intervention. Nos tarifs sont clairement affichés, sans surprise ni frais cachés.
+            </p>
+            
+            <div class="tarifs-grid">
+    <!-- Carte 1 : Débouchage standard -->
+                <div class="tarif-card">
+                    <div class="tarif-header">
+                        <div class="tarif-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 11l3 3L22 4"></path>
+                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                            </svg>
+                        </div>
+                        <div class="tarif-info">
+                            <h3 class="tarif-title">Débouchage standard</h3>
+                            <div class="tarif-price">
+                                <span class="price-amount">À partir de 149€</span>
+                                <span class="price-label">TTC</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul class="tarif-features">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            <span>Débouchage WC, évier, douche</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            <span>Intervention rapide</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            <span>Devis gratuit sur place</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            <span>Garantie intervention</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tarif 2 - Curage (Featured) -->
+                <div class="tarif-card featured">
+                    <div class="tarif-badge">Le plus demandé</div>
+                        <div class="tarif-header">
+                            <div class="tarif-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                                </svg>
+                            </div>
+                            <div class="tarif-info">
+                                <h3 class="tarif-title">Curage haute pression</h3>
+                                <div class="tarif-price">
+                                    <span class="price-amount">À partir de 229€</span>
+                                    <span class="price-label">TTC</span>
+                                </div>
+                            </div>
+                        </div>
+    
+                    <ul class="tarif-features">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                            <span>Hydrocurage professionnel</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                            <span>Nettoyage complet des canalisations</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                            <span>Élimination tartre et graisses</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                            <span>Résultat durable garanti</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tarif 3 - Inspection vidéo -->
+                <div class="tarif-card">
+                        <div class="tarif-header">
+                            <div class="tarif-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M23 7l-7 5 7 5V7z"></path>
+                                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                                </svg>
+                            </div>
+                            <div class="tarif-info">
+                                <h3 class="tarif-title">Inspection vidéo</h3>
+                                <div class="tarif-price">
+                                    <span class="price-amount">À partir de 120€</span>
+                                    <span class="price-label">TTC</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <ul class="tarif-features">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                                <span>Caméra endoscopique HD</span>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                                <span>Diagnostic précis</span>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                                <span>Rapport détaillé fourni</span>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                                <span>Détection problèmes cachés</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="tarifs.html" class="btn-tarifs">
+                    Voir tous nos tarifs
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                            <img src="images/logo-artiserv-blanc.webp" alt="Artiserv Débouchage">
+                    </div>
+                        <p>
+                            Votre spécialiste du débouchage et de l'assainissement à Vitry-sur-Seine et en Val-de-Marne. 
+                            Intervention rapide 24h/24, 7j/7.
+                        </p>
+                    </div>
+                
+                    <div class="footer-column">
+                        <h4>Nos services</h4>
+                        <ul>
+                            <li><a href="debouchage-canalisations.html">Débouchage</a></li>
+                            <li><a href="curage-canalisations.html">Curage</a></li>
+                            <li><a href="inspection-video-canalisations.html">Inspection vidéo</a></li>
+                            <li><a href="pompage-canalisations.html">Pompage</a></li>
+                            <li><span style="color: var(--color-gray-500); cursor: default;">Vidange fosse (bientôt)</span></li>
+                            <li><span style="color: var(--color-gray-500); cursor: default;">Assainissement (bientôt)</span></li>
+                        </ul>
+                    </div>
+                
+                <div class="footer-column">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="mentions-legales.html">Mentions légales</a></li>
+                        <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <a href="tel:09 80 80 55 05">09 80 80 55 05</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <a href="mailto:artiserv.debouchage@gmail.com">artiserv.debouchage@gmail.com</a>                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>Vitry-sur-Seine & Val-de-Marne</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Artiserv Débouchage Vitry-sur-Seine. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="politique-confidentialite.html">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta">
+        <a href="tel:09 80 80 55 05" class="floating-btn" aria-label="Appeler">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+        </a>
+    </div>
+
+<!-- Barre de consentement cookies -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="cookie-icon">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="1" fill="currentColor"></circle>
+                    <circle cx="8" cy="8" r="1" fill="currentColor"></circle>
+                    <circle cx="16" cy="8" r="1" fill="currentColor"></circle>
+                    <circle cx="9" cy="15" r="1" fill="currentColor"></circle>
+                    <circle cx="15" cy="15" r="1" fill="currentColor"></circle>
+                </svg>
+                <div>
+                    <p><strong>Respect de votre vie privée</strong></p>
+                    <p>Nous utilisons des cookies pour améliorer votre expérience de navigation et analyser notre trafic. 
+                    <a href="politique-confidentialite.html" target="_blank">En savoir plus</a></p>
+                </div>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-btn-reject" id="cookieReject">Refuser</button>
+                <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accepter</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

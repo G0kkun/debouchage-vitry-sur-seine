@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Confidentialité - Débouchage Canalisation Vitry-sur-Seine | Artiserv</title>
+    <meta name="description" content="Politique de confidentialité et protection des données personnelles d'Artiserv Débouchage. Conformité RGPD.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Bloquer l'indexation Google -->
+    <meta name="robots" content="noindex, follow">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-item top-bar-urgent">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Prochain créneau : <strong id="next-slot">Chargement...</strong></span>
+            </div>
+            <div class="top-bar-item top-bar-activity">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+                <span id="technician-activity">Technicien en route sur Vitry-sur-Seine Nord</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo-artiserv-debouchage.webp" alt="Artiserv Débouchage" class="logo-img">
+            </a>
+            
+            <!-- Bouton hamburger -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Menu desktop -->
+            <nav class="nav-menu-desktop">
+                <a href="index.html">Accueil</a>
+                <a href="debouchage-canalisations.html">Débouchage</a>
+                <a href="curage-canalisations.html">Curage</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle">
+                        Autres services
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; margin-left: 4px;">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="inspection-video-canalisations.html">Inspection vidéo</a>
+                        <a href="pompage-canalisations.html">Pompage</a>
+                    </div>
+                </div>
+                <a href="contact.html">Contact</a>
+            </nav>
+            
+            <a href="tel:09 80 80 55 05" class="phone-cta">
+                <svg class="phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                09 80 80 55 05
+            </a>
+        </div>
+    </header>
+
+    <!-- Menu Overlay Full Screen -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-overlay-bg"></div>
+        <div class="menu-overlay-content">
+            <button class="menu-close" id="menuClose" aria-label="Fermer le menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            
+            <div class="menu-logo">
+                <img src="images/logo-artiserv-blanc.webp" alt="Artiserv Débouchage">
+            </div>
+            
+            <nav class="menu-nav">
+                <a href="index.html" class="menu-link">
+                    <span class="menu-link-number">01</span>
+                    <span class="menu-link-text">Accueil</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+                <a href="debouchage-canalisations.html" class="menu-link">
+                    <span class="menu-link-number">02</span>
+                    <span class="menu-link-text">Débouchage</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+                <a href="curage-canalisations.html" class="menu-link">
+                    <span class="menu-link-number">03</span>
+                    <span class="menu-link-text">Curage</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+                <div class="menu-link menu-link-dropdown">
+                    <span class="menu-link-number">04</span>
+                    <span class="menu-link-text">Autres services</span>
+                    <span class="menu-link-arrow">▼</span>
+                </div>
+                <div class="menu-submenu">
+                    <a href="inspection-video-canalisations.html" class="menu-sublink">
+                        <span class="menu-link-number">04-1</span>
+                        <span class="menu-sublink-text">Inspection vidéo</span>
+                    </a>
+                    <a href="pompage-canalisations.html" class="menu-sublink">
+                        <span class="menu-link-number">04-2</span>
+                        <span class="menu-sublink-text">Pompage</span>
+                    </a>
+                </div>
+                <a href="contact.html" class="menu-link">
+                    <span class="menu-link-number">05</span>
+                    <span class="menu-link-text">Contact</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+            </nav>
+            
+            <div class="menu-cta">
+                <a href="tel:09 80 80 55 05" class="menu-phone-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <div class="menu-phone-content">
+                        <span class="menu-phone-label">Urgence 24/7</span>
+                        <span class="menu-phone-number">09 80 80 55 05</span>
+                    </div>
+                </a>
+                <div class="menu-location">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Vitry-sur-Seine, 94</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenu Principal -->
+    <main>
+        <section class="section legal-page">
+            <div class="container">
+                <h1>Politique de Confidentialité</h1>
+                
+                <div class="legal-content">
+                    <p class="intro-text">
+                        Chez <strong>Artiserv Débouchage</strong> (GSS - LES COMPAGNONS DE L'HABITAT), nous prenons la protection de vos données personnelles très au sérieux. Cette politique de confidentialité vous explique comment nous collectons, utilisons, stockons et protégeons vos informations personnelles conformément au Règlement Général sur la Protection des Données (RGPD).
+                    </p>
+                    
+                    <h2>1. Responsable du traitement des données</h2>
+                    
+                    <p>
+                        <strong>GSS - LES COMPAGNONS DE L'HABITAT</strong><br>
+                        9 Lieu-dit La Martinière<br>
+                        37230 PERNAY<br>
+                        France
+                    </p>
+                    
+                    <p>
+                        SIRET : 981 957 590 00020<br>
+                        Email : <a href="mailto:artiserv.debouchage@gmail.com">artiserv.debouchage@gmail.com</a><br>
+                        Téléphone : <a href="tel:09 80 80 55 05">09 80 80 55 05</a>
+                    </p>
+                    
+                    <h2>2. Données collectées</h2>
+                    
+                    <h3>2.1 Données collectées directement</h3>
+                    <p>Lorsque vous utilisez notre site web ou nos services, nous pouvons collecter les informations suivantes :</p>
+                    <ul>
+                        <li><strong>Informations d'identité :</strong> nom, prénom</li>
+                        <li><strong>Coordonnées :</strong> adresse postale, email, numéro de téléphone</li>
+                        <li><strong>Informations relatives à votre demande :</strong> type d'intervention, description du problème, photos éventuelles</li>
+                        <li><strong>Informations de paiement :</strong> données nécessaires à la facturation (non stockées en ligne)</li>
+                    </ul>
+                    
+                    <h3>2.2 Données collectées automatiquement</h3>
+                    <p>Lors de votre navigation sur notre site, nous collectons automatiquement :</p>
+                    <ul>
+                        <li><strong>Données de connexion :</strong> adresse IP, type de navigateur, pages visitées, durée de visite</li>
+                        <li><strong>Cookies :</strong> petits fichiers permettant d'améliorer votre expérience de navigation</li>
+                    </ul>
+                    
+                    <h2>3. Finalités du traitement</h2>
+                    
+                    <p>Vos données personnelles sont collectées et traitées pour les finalités suivantes :</p>
+                    
+                    <h3>3.1 Exécution du contrat</h3>
+                    <ul>
+                        <li>Traitement de vos demandes de devis et d'intervention</li>
+                        <li>Planification et réalisation des interventions</li>
+                        <li>Gestion de la relation client</li>
+                        <li>Facturation et suivi des paiements</li>
+                    </ul>
+                    
+                    <h3>3.2 Obligations légales</h3>
+                    <ul>
+                        <li>Respect des obligations comptables et fiscales</li>
+                        <li>Conformité aux obligations légales et réglementaires</li>
+                    </ul>
+                    
+                    <h3>3.3 Intérêt légitime</h3>
+                    <ul>
+                        <li>Amélioration de nos services</li>
+                        <li>Analyse statistique de notre activité</li>
+                        <li>Gestion des réclamations et litiges</li>
+                        <li>Sécurité de nos systèmes d'information</li>
+                    </ul>
+                    
+                    <h3>3.4 Consentement (marketing)</h3>
+                    <ul>
+                        <li>Envoi de newsletters et communications marketing (uniquement si vous y avez consenti)</li>
+                        <li>Personnalisation de votre expérience sur notre site</li>
+                    </ul>
+                    
+                    <h2>4. Base légale du traitement</h2>
+                    
+                    <p>Le traitement de vos données repose sur :</p>
+                    <ul>
+                        <li><strong>L'exécution d'un contrat :</strong> pour la gestion de votre demande et la réalisation de l'intervention</li>
+                        <li><strong>Une obligation légale :</strong> pour respecter nos obligations comptables et fiscales</li>
+                        <li><strong>Un intérêt légitime :</strong> pour améliorer nos services et assurer la sécurité de notre site</li>
+                        <li><strong>Votre consentement :</strong> pour les communications marketing (que vous pouvez retirer à tout moment)</li>
+                    </ul>
+                    
+                    <h2>5. Destinataires des données</h2>
+                    
+                    <p>Vos données personnelles peuvent être transmises aux destinataires suivants :</p>
+                    <ul>
+                        <li><strong>Personnel autorisé :</strong> nos techniciens et personnel administratif dans le cadre de l'exécution de leurs missions</li>
+                        <li><strong>Prestataires de services :</strong> hébergement web (Cloudflare), outils de gestion, services de paiement</li>
+                        <li><strong>Autorités légales :</strong> sur demande et dans le cadre de nos obligations légales</li>
+                    </ul>
+                    
+                    <p>Nous nous assurons que tous nos partenaires respectent la réglementation en matière de protection des données personnelles.</p>
+                    
+                    <h2>6. Transfert de données hors UE</h2>
+                    
+                    <p>Certaines de vos données peuvent être transférées vers des pays situés hors de l'Union Européenne, notamment vers les États-Unis (hébergement Cloudflare).</p>
+                    
+                    <p>Ces transferts sont encadrés par des garanties appropriées conformément au RGPD (clauses contractuelles types, Privacy Shield, etc.).</p>
+                    
+                    <h2>7. Durée de conservation</h2>
+                    
+                    <p>Vos données sont conservées pendant les durées suivantes :</p>
+                    <ul>
+                        <li><strong>Données clients (contrat exécuté) :</strong> 10 ans (obligations comptables)</li>
+                        <li><strong>Devis non acceptés :</strong> 2 ans</li>
+                        <li><strong>Données de prospection :</strong> 3 ans à compter du dernier contact</li>
+                        <li><strong>Données de connexion (logs) :</strong> 12 mois</li>
+                        <li><strong>Cookies :</strong> 13 mois maximum</li>
+                    </ul>
+                    
+                    <p>À l'issue de ces durées, vos données sont supprimées ou anonymisées.</p>
+                    
+                    <h2>8. Vos droits</h2>
+                    
+                    <p>Conformément au RGPD, vous disposez des droits suivants concernant vos données personnelles :</p>
+                    
+                    <h3>8.1 Droit d'accès</h3>
+                    <p>Vous pouvez obtenir une copie des données personnelles que nous détenons sur vous.</p>
+                    
+                    <h3>8.2 Droit de rectification</h3>
+                    <p>Vous pouvez demander la correction de données inexactes ou incomplètes.</p>
+                    
+                    <h3>8.3 Droit à l'effacement ("droit à l'oubli")</h3>
+                    <p>Vous pouvez demander la suppression de vos données dans certaines conditions.</p>
+                    
+                    <h3>8.4 Droit à la limitation du traitement</h3>
+                    <p>Vous pouvez demander la limitation du traitement de vos données dans certains cas.</p>
+                    
+                    <h3>8.5 Droit à la portabilité</h3>
+                    <p>Vous pouvez recevoir vos données dans un format structuré et les transmettre à un autre responsable de traitement.</p>
+                    
+                    <h3>8.6 Droit d'opposition</h3>
+                    <p>Vous pouvez vous opposer au traitement de vos données pour des raisons tenant à votre situation particulière.</p>
+                    
+                    <h3>8.7 Droit de retirer votre consentement</h3>
+                    <p>Lorsque le traitement est basé sur votre consentement, vous pouvez le retirer à tout moment.</p>
+                    
+                    <h3>8.8 Droit de définir des directives post-mortem</h3>
+                    <p>Vous pouvez définir des directives relatives à la conservation, l'effacement et la communication de vos données après votre décès.</p>
+                    
+                    <h3>Comment exercer vos droits ?</h3>
+                    <p>Pour exercer l'un de ces droits, contactez-nous :</p>
+                    <ul>
+                        <li>Par email : <a href="mailto:artiserv.debouchage@gmail.com">artiserv.debouchage@gmail.com</a></li>
+                        <li>Par courrier : GSS - LES COMPAGNONS DE L'HABITAT, 9 Lieu-dit La Martinière, 37230 PERNAY</li>
+                    </ul>
+                    
+                    <p>Nous vous répondrons dans un délai d'un mois maximum. Une pièce d'identité pourra vous être demandée pour vérifier votre identité.</p>
+                    
+                    <h2>9. Sécurité des données</h2>
+                    
+                    <p>Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données contre :</p>
+                    <ul>
+                        <li>L'accès non autorisé</li>
+                        <li>La perte accidentelle</li>
+                        <li>La destruction</li>
+                        <li>L'altération</li>
+                        <li>La divulgation non autorisée</li>
+                    </ul>
+                    
+                    <p>Ces mesures incluent notamment :</p>
+                    <ul>
+                        <li>Chiffrement SSL/TLS pour les transmissions de données</li>
+                        <li>Accès restreint aux données personnelles</li>
+                        <li>Sauvegardes régulières</li>
+                        <li>Formation de notre personnel à la protection des données</li>
+                    </ul>
+                    
+                    <h2>10. Cookies et technologies similaires</h2>
+                    
+                    <h3>Qu'est-ce qu'un cookie ?</h3>
+                    <p>Un cookie est un petit fichier texte déposé sur votre terminal lors de la visite d'un site web. Il permet de mémoriser des informations relatives à votre navigation.</p>
+                    
+                    <h3>Types de cookies utilisés</h3>
+                    
+                    <h4>Cookies strictement nécessaires</h4>
+                    <p>Ces cookies sont indispensables au fonctionnement du site. Ils ne nécessitent pas votre consentement.</p>
+                    
+                    <h4>Cookies de performance</h4>
+                    <p>Ces cookies nous permettent d'analyser l'utilisation du site et d'améliorer ses performances. Ils nécessitent votre consentement.</p>
+                    
+                    <h4>Cookies fonctionnels</h4>
+                    <p>Ces cookies permettent d'améliorer votre expérience en mémorisant vos préférences. Ils nécessitent votre consentement.</p>
+                    
+                    <h3>Gestion des cookies</h3>
+                    <p>Vous pouvez à tout moment :</p>
+                    <ul>
+                        <li>Accepter ou refuser les cookies via notre bandeau de consentement</li>
+                        <li>Paramétrer votre navigateur pour refuser les cookies</li>
+                        <li>Supprimer les cookies déjà installés</li>
+                    </ul>
+                    
+                    <p>Note : Le refus des cookies peut limiter certaines fonctionnalités du site.</p>
+                    
+                    <h2>11. Mineurs</h2>
+                    
+                    <p>Notre site et nos services ne sont pas destinés aux personnes de moins de 18 ans. Nous ne collectons pas sciemment de données personnelles concernant des mineurs.</p>
+                    
+                    <p>Si vous êtes parent ou tuteur et que vous pensez que votre enfant nous a fourni des données personnelles, contactez-nous immédiatement.</p>
+                    
+                    <h2>12. Modification de la politique de confidentialité</h2>
+                    
+                    <p>Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment.</p>
+                    
+                    <p>Toute modification sera publiée sur cette page avec une nouvelle date de "Dernière mise à jour". En cas de modification substantielle, nous vous en informerons par email ou via un avis visible sur notre site.</p>
+                    
+                    <p>Nous vous encourageons à consulter régulièrement cette page pour prendre connaissance d'éventuelles mises à jour.</p>
+                    
+                    <h2>13. Réclamation auprès de l'autorité de contrôle</h2>
+                    
+                    <p>Si vous estimez que vos droits ne sont pas respectés, vous avez le droit d'introduire une réclamation auprès de la Commission Nationale de l'Informatique et des Libertés (CNIL) :</p>
+                    
+                    <p>
+                        <strong>CNIL</strong><br>
+                        3 Place de Fontenoy<br>
+                        TSA 80715<br>
+                        75334 PARIS CEDEX 07<br>
+                        Téléphone : 01 53 73 22 22<br>
+                        Site web : <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>
+                    </p>
+                    
+                    <h2>14. Contact</h2>
+                    
+                    <p>Pour toute question concernant cette politique de confidentialité ou le traitement de vos données personnelles, vous pouvez nous contacter :</p>
+                    
+                    <p>
+                        <strong>GSS - LES COMPAGNONS DE L'HABITAT</strong><br>
+                        9 Lieu-dit La Martinière<br>
+                        37230 PERNAY<br>
+                        Email : <a href="mailto:artiserv.debouchage@gmail.com">artiserv.debouchage@gmail.com</a><br>
+                        Téléphone : <a href="tel:09 80 80 55 05">09 80 80 55 05</a>
+                    </p>
+                    
+                    <div class="legal-update">
+                        <p><em>Dernière mise à jour : Décembre 2024</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo-artiserv-blanc.webp" alt="Artiserv Débouchage">
+                    </div>
+                    <p>
+                        Votre spécialiste du débouchage et de l'assainissement à Vitry-sur-Seine et en Val-de-Marne. 
+                        Intervention rapide 24h/24, 7j/7.
+                    </p>                    
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Nos services</h4>
+                    <ul>
+                        <li><a href="debouchage-canalisations.html">Débouchage</a></li>
+                        <li><a href="curage-canalisations.html">Curage</a></li>
+                        <li><a href="inspection-video-canalisations.html">Inspection vidéo</a></li>
+                        <li><a href="pompage-canalisations.html">Pompage</a></li>
+                        <li><span style="color: var(--color-gray-500); cursor: default;">Vidange fosse (bientôt)</span></li>
+                        <li><span style="color: var(--color-gray-500); cursor: default;">Assainissement (bientôt)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="mentions-legales.html">Mentions légales</a></li>
+                        <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <a href="tel:09 80 80 55 05">09 80 80 55 05</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <a href="mailto:artiserv.debouchage@gmail.com">artiserv.debouchage@gmail.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>Vitry-sur-Seine & Val-de-Marne</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 <span class="brand-name brand-name-inverse"><span class="arti">ARTI</span><span class="serv">SERV</span></span> Débouchage - Tous droits réservés</p>
+                <div class="footer-links">
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="politique-confidentialite.html">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta">
+        <a href="tel:09 80 80 55 05" class="floating-btn" aria-label="Appeler maintenant">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

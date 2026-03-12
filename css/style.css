@@ -227,6 +227,139 @@ p { margin-bottom: 1rem; }
         display: flex;
     }
 }
+/* Dropdown menu desktop */
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    padding-left: 1.5rem !important;
+    color: var(--color-gray-700);
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.nav-dropdown-menu a:hover {
+    background: var(--color-gray-100);
+    color: var(--color-primary);
+}
+
+/* Lien actif dans le dropdown */
+.nav-dropdown-menu a.active {
+    background: var(--color-gray-100);
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* ===================================================== */
+/* MENU MOBILE - SOUS-MENU "AUTRES SERVICES"            */
+/* ===================================================== */
+.menu-submenu {
+    display: none;
+    padding-left: 0;
+    margin-top: 0;
+}
+
+.menu-submenu.active {
+    display: block;
+}
+
+.menu-sublink {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.2rem 2rem;
+    padding-left: 5rem; /* Décalage pour montrer la hiérarchie */
+    color: var(--color-white);
+    font-family: var(--font-primary); /* Même police que menu principal */
+    font-size: 1.6rem; /* Plus petit que 2.5rem du menu principal */
+    font-weight: 600; /* Un peu moins bold que 700 */
+    text-transform: uppercase; /* Comme le menu principal */
+    letter-spacing: -0.5px;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.3s ease;
+}
+/* Numéros dans le sous-menu - style orange comme le menu principal */
+.menu-sublink .menu-link-number {
+    font-size: 1rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    min-width: 50px;
+}
+
+/* Animation d'apparition */
+.menu-submenu.active .menu-sublink {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.menu-submenu.active .menu-sublink:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.menu-submenu.active .menu-sublink:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+/* Effet orange au hover - identique au menu principal */
+.menu-sublink::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--color-primary);
+    transition: width 0.4s ease;
+    z-index: -1;
+}
+
+.menu-sublink:hover::before {
+    width: 100%;
+}
+
+.menu-sublink:hover {
+    color: var(--color-white);
+    padding-left: 5.5rem; /* Léger décalage au hover */
+}
+
+.menu-sublink-text {
+    flex: 1;
+}
 
 /* =====================================================
    HEADER
@@ -880,6 +1013,40 @@ p { margin-bottom: 1rem; }
     .span-2 {
         grid-column: span 1;
     }
+}
+
+/* Icône + orange en bas du texte */
+.bento-plus-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.bento-plus-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--color-white);
+    stroke-width: 2.5;
+}
+
+/* Au hover, afficher l'icône avec un effet bounce */
+.bento-item:hover .bento-plus-icon {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.3s;
+}
+
+/* Supprimez l'ancienne flèche */
+.bento-arrow {
+    display: none;
 }
 
 /* =====================================================

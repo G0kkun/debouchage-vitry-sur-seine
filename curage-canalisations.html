@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curage Canalisation Vitry-sur-Seine | Hydrocurage Haute Pression 24/7</title>
+    <meta name="description" content="Expert curage et hydrocurage canalisations à Vitry-sur-Seine. Nettoyage haute pression, détartrage, dégraissage. Intervention 24/7. Devis gratuit. ☎️ 09 80 80 55 05">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://debouchage-canalisation-vitry-sur-seine.fr/curage-canalisations" />
+
+    <!-- Google Fonts (optimisé) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-item top-bar-urgent">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Prochain créneau : <strong id="next-slot">Chargement...</strong></span>
+            </div>
+            <div class="top-bar-item top-bar-activity">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+                <span id="technician-activity">Camion hydrocureur en route sur Vitry-sur-Seine</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo-artiserv-debouchage.webp" alt="Artiserv Débouchage" class="logo-img">
+            </a>
+            
+            <!-- Bouton hamburger -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Menu desktop -->
+            <nav class="nav-menu-desktop">
+                <a href="index.html">Accueil</a>
+                <a href="debouchage-canalisations.html">Débouchage</a>
+                <a href="curage-canalisations.html" class="active">Curage</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle">
+                        Autres services
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; margin-left: 4px;">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="inspection-video-canalisations.html">Inspection vidéo</a>
+                        <a href="pompage-canalisations.html">Pompage</a>
+                    </div>
+                </div>
+                <a href="contact.html">Contact</a>
+            </nav>
+            
+            <a href="tel:09 80 80 55 05" class="phone-cta">
+                <svg class="phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                09 80 80 55 05
+            </a>
+        </div>
+    </header>
+
+    <!-- Menu Overlay Full Screen -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-overlay-bg"></div>
+        <div class="menu-overlay-content">
+            <button class="menu-close" id="menuClose" aria-label="Fermer le menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            
+            <div class="menu-logo">
+                <img src="images/logo-artiserv-blanc.webp" alt="Artiserv Débouchage">
+            </div>
+            
+            <nav class="menu-nav">
+                <a href="index.html" class="menu-link">
+                    <span class="menu-link-number">01</span>
+                    <span class="menu-link-text">Accueil</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+                <a href="debouchage-canalisations.html" class="menu-link">
+                    <span class="menu-link-number">02</span>
+                    <span class="menu-link-text">Débouchage</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+                <a href="curage-canalisations.html" class="menu-link">
+                    <span class="menu-link-number">03</span>
+                    <span class="menu-link-text">Curage</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+                <div class="menu-link menu-link-dropdown">
+                    <span class="menu-link-number">04</span>
+                    <span class="menu-link-text">Autres services</span>
+                    <span class="menu-link-arrow">▼</span>
+                </div>
+                <div class="menu-submenu">
+                    <a href="inspection-video-canalisations.html" class="menu-sublink">
+                        <span class="menu-link-number">04-1</span>
+                        <span class="menu-sublink-text">Inspection vidéo</span>
+                    </a>
+                    <a href="pompage-canalisations.html" class="menu-sublink">
+                        <span class="menu-link-number">04-2</span>
+                        <span class="menu-sublink-text">Pompage</span>
+                    </a>
+                </div>
+                <a href="contact.html" class="menu-link">
+                    <span class="menu-link-number">05</span>
+                    <span class="menu-link-text">Contact</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+            </nav>
+            
+            <div class="menu-cta">
+                <a href="tel:09 80 80 55 05" class="menu-phone-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <div class="menu-phone-content">
+                        <span class="menu-phone-label">Urgence 24/7</span>
+                        <span class="menu-phone-number">09 80 80 55 05</span>
+                    </div>
+                </a>
+                <div class="menu-location">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Vitry-sur-Seine, 94</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Curage et Hydrocurage de Canalisations à <span class="highlight">Vitry-sur-Seine</span></h1>
+                <p class="hero-subtitle">
+                    Expert en curage et hydrocurage haute pression à Vitry-sur-Seine et dans le Val-de-Marne. 
+                    Nettoyage professionnel des canalisations, détartrage, dégraissage, élimination des racines. 
+                    Camion hydrocureur jusqu'à 200 bars. Intervention rapide 24h/24.
+                </p>
+                
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                        <span>Hydrocurage haute pression</span>
+                    </div>
+                    <div class="hero-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                        <span>Nettoyage complet des parois</span>
+                    </div>
+                    <div class="hero-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                        <span>Inspection caméra HD</span>
+                    </div>
+                    <div class="hero-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                        <span>Camion hydrocureur professionnel</span>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="tel:09 80 80 55 05" class="btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        Appelez maintenant
+                    </a>
+                    <a href="contact.html" class="btn-secondary">
+                        Devis gratuit
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <picture>
+                    <img src="images/hero-curage-hydrocurage.webp" alt="Curage et hydrocurage canalisations professionnel à Vitry-sur-Seine">
+                </picture>
+                
+                <div class="floating-badge floating-badge-1">
+                    <div class="badge-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                    </div>
+                    <div class="badge-text">
+                        <span class="badge-label">Pression</span>
+                        <span class="badge-value">200 bars</span>
+                    </div>
+                </div>
+                
+                <div class="floating-badge floating-badge-2">
+                    <div class="badge-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <div class="badge-text">
+                        <span class="badge-label">Intervention</span>
+                        <span class="badge-value">-30 min</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bandeau Orange -->
+    <div class="emergency-banner">
+        <div class="container emergency-container">
+            <div class="emergency-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+                <span>Urgence 24/7</span>
+            </div>
+            <div class="emergency-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Arrivée en 30 min</span>
+            </div>
+            <div class="emergency-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span>Devis gratuit</span>
+            </div>
+            <div class="emergency-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <span>Camion hydrocureur pro</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Introduction -->
+    <section class="section">
+        <div class="container">
+            <h2>Spécialiste du <span class="highlight">curage et hydrocurage</span> à Vitry-sur-Seine</h2>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                <a href="index.html" style="text-decoration: none; color: inherit;"><strong><span class="brand-name"><span class="arti">ARTI</span><span class="serv">SERV</span></span> Débouchage</strong></a> intervient à Vitry-sur-Seine et dans le Val-de-Marne pour le <strong>curage et l'hydrocurage professionnel de vos canalisations</strong>. 
+                Notre <strong>camion hydrocureur haute pression</strong> (jusqu'à 200 bars) élimine efficacement graisses, calcaire, tartre, racines et tous dépôts accumulés dans vos réseaux d'évacuation.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                Le <strong>curage haute pression</strong> permet un <strong>nettoyage complet et durable</strong> de vos canalisations. Contrairement au simple débouchage, l'hydrocurage nettoie intégralement les parois internes, 
+                élimine les dépôts les plus tenaces et prévient les futurs engorgements. Cette technique est particulièrement recommandée pour les <strong>canalisations très encrassées</strong>, 
+                les <strong>réseaux anciens</strong>, les <strong>installations professionnelles</strong> (restaurants, copropriétés, industries) et l'<strong>entretien préventif</strong>.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+                Zone d'intervention : <strong>Vitry-sur-Seine</strong>, les communes environnantes et toutes les communes du Val-de-Marne. 
+                <strong>Intervention d'urgence en moins de 30 minutes</strong> avec camion hydrocureur professionnel.
+            </p>
+        </div>
+    </section>
+
+    <!-- Types de curage - Grille Bento -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2>Nos prestations de <span class="highlight">curage professionnel</span></h2>
+            
+            <div class="services-bento">
+                <!-- Canalisations Principales - Large -->
+                <div class="bento-item span-2" style="background-image: url('images/curage-canalisation-principale.webp');" aria-label="Curage canalisations principales à Vitry-sur-Seine - hydrocurage haute pression professionnel">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Curage Canalisations Principales</h3>
+                        <p class="bento-desc">Hydrocurage haute pression des colonnes d'eaux usées, réseaux collectifs, canalisations d'immeubles. Élimination complète graisses, tartre, calcaire. Nettoyage intégral des parois.</p>
+                    </div>
+                    <div class="bento-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Réseaux Extérieurs - Vertical -->
+                <div class="bento-item span-v-2" style="background-image: url('images/curage-reseau-exterieur.webp');" aria-label="Curage réseaux extérieurs à Vitry-sur-Seine - canalisations enterrées et eaux pluviales">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Réseaux Extérieurs Enterrés</h3>
+                        <p class="bento-desc">Curage canalisations enterrées, réseaux eaux pluviales, regards d'évacuation. Élimination racines, boues, sédiments. Camion hydrocureur adapté aux longs réseaux extérieurs.</p>
+                    </div>
+                    <div class="bento-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Restaurants & Professionnels -->
+                <div class="bento-item" style="background-image: url('images/curage-restaurant.webp');" aria-label="Curage canalisations restaurant à Vitry-sur-Seine - dégraissage professionnel">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Restaurants & Professionnels</h3>
+                        <p class="bento-desc">Dégraissage intensif des réseaux de restaurants, cantines, boucheries. Bacs à graisse, siphons sols, évacuations cuisine. Entretien préventif régulier.</p>
+                    </div>
+                    <div class="bento-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Copropriétés & Immeubles -->
+                <div class="bento-item" style="background-image: url('images/curage-copropriete.webp');" aria-label="Curage canalisations copropriété à Vitry-sur-Seine - entretien réseau collectif">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Copropriétés & Immeubles</h3>
+                        <p class="bento-desc">Curage préventif des colonnes, réseaux collectifs, descentes EP/EU. Contrats d'entretien annuel. Intervention programmée ou urgence.</p>
+                    </div>
+                    <div class="bento-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Fosses & Assainissement -->
+                <div class="bento-item" style="background-image: url('images/curage-fosse-septique.webp');" aria-label="Curage fosse septique à Vitry-sur-Seine - vidange et nettoyage complet">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Fosses & Assainissement</h3>
+                        <p class="bento-desc">Vidange fosse septique, curage canalisations de sortie, nettoyage préfiltre, débouchage épandage. Camion hydrocureur avec pompe de relevage.</p>
+                    </div>
+                    <div class="bento-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Inspection Préventive -->
+                <div class="bento-item" style="background-image: url('images/inspection-camera-curage.webp');" aria-label="Inspection caméra et curage à Vitry-sur-Seine - diagnostic complet du réseau">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Inspection + Curage Préventif</h3>
+                        <p class="bento-desc">Inspection caméra HD avant/après curage. Diagnostic complet de l'état du réseau. Rapport vidéo détaillé. Entretien préventif programmé.</p>
+                    </div>
+                    <div class="bento-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pourquoi le curage ? -->
+    <section class="section">
+        <div class="container">
+            <h2>Pourquoi faire un <span class="highlight">curage de canalisations</span> ?</h2>
+            
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shower"></i>
+                    </div>
+                    <h3>Nettoyage Complet des Parois</h3>
+                    <p>L'hydrocurage haute pression nettoie intégralement les parois internes des canalisations. Élimine 100% des dépôts : graisses solidifiées, calcaire, tartre, biofilm bactérien, résidus alimentaires.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3>Prévention des Bouchons</h3>
+                    <p>En supprimant tous les dépôts, le curage prévient la formation de futurs bouchons. Les canalisations retrouvent leur diamètre optimal. Efficacité durable : jusqu'à 2-3 ans sans problème.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>100% Écologique</h3>
+                    <p>Aucun produit chimique utilisé, uniquement la pression de l'eau. Respecte vos canalisations et l'environnement. Technique saine recommandée pour les fosses septiques et stations d'épuration.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Élimination des Racines</h3>
+                    <p>Seul l'hydrocurage haute pression peut éliminer les racines qui pénètrent dans les canalisations enterrées. Coupe les racines, nettoie les fissures. Recommandé pour les réseaux extérieurs anciens.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre Processus -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2>Comment se déroule un <span class="highlight">curage professionnel</span> ?</h2>
+            
+            <div class="process-container">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Diagnostic & Inspection</h3>
+                    <p>Inspection caméra HD pour localiser les zones encrassées et vérifier l'état général du réseau. Identification des dépôts : graisses, calcaire, racines, boues.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Préparation du chantier</h3>
+                    <p>Installation du camion hydrocureur. Accès aux regards, bouches d'égout ou toilettes selon configuration. Protection de la zone d'intervention.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Hydrocurage haute pression</h3>
+                    <p>Injection d'eau à 100-200 bars dans les canalisations. La buse rotative nettoie les parois sur 360°. Élimination progressive de tous les dépôts, de l'amont vers l'aval.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Évacuation & Contrôle</h3>
+                    <p>Aspiration des eaux chargées de déchets par le camion hydrocureur. Inspection caméra de contrôle après curage. Vérification du bon écoulement. Nettoyage du site.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quand faire un curage ? -->
+    <section class="section">
+        <div class="container">
+            <h2>Quand réaliser un <span class="highlight">curage de canalisations</span> ?</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                Le <strong>curage haute pression</strong> est nécessaire dans plusieurs situations. Reconnaître les signes permet d'intervenir avant un bouchon complet.
+            </p>
+            <div class="advantages-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Évacuation lente persistante</h3>
+                    <p>L'eau s'écoule lentement malgré plusieurs débouchages simples. Signe d'<strong>encrassement important des parois</strong>. Le curage élimine les dépôts que le furet ne peut atteindre.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-repeat"></i>
+                    </div>
+                    <h3>Bouchons récurrents</h3>
+                    <p>Les bouchons reviennent régulièrement au même endroit. Indique une <strong>accumulation de graisses, calcaire ou racines</strong>. Le curage supprime la cause à la source.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Odeurs nauséabondes</h3>
+                    <p>Mauvaises odeurs remontant des canalisations. Causées par la <strong>stagnation et la décomposition des matières organiques</strong> dans les dépôts. Le curage élimine le biofilm responsable.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Installation ancienne</h3>
+                    <p>Canalisations de plus de 15 ans n'ayant jamais été curées. <strong>Accumulation progressive de dépôts</strong> réduisant le diamètre. Curage préventif recommandé tous les 3-5 ans.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Usage professionnel intensif</h3>
+                    <p><strong>Restaurants, cantines, boucheries</strong> : accumulation rapide de graisses. <strong>Copropriétés</strong> : usage collectif intensif. Curage préventif annuel obligatoire ou recommandé.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Racines dans les canalisations</h3>
+                    <p>Détectées par inspection caméra. Les racines cherchent l'humidité et pénètrent dans les canalisations enterrées. <strong>Seul l'hydrocurage peut les éliminer efficacement</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tarifs -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2>Tarifs <span class="highlight">curage</span> et devis gratuit</h2>
+            <p style="text-align: left; margin: 0 auto 3rem; color: var(--color-gray-700); font-size: 1.1rem;">
+                Devis gratuit sur place après inspection. Nos tarifs de curage dépendent de la longueur et de l'accessibilité du réseau.
+            </p>
+            
+            <div class="tarifs-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <!-- Carte 1 : Curage Simple (Featured) -->
+                <div class="tarif-card featured">
+                    <div class="tarif-badge">Le plus demandé</div>
+                    <div class="tarif-header">
+                        <div class="tarif-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                            </svg>
+                        </div>
+                        <div class="tarif-info">
+                            <h3 class="tarif-title">Curage Simple Particulier</h3>
+                            <div class="tarif-price">
+                                <span class="price-amount">À partir de 120€</span>
+                                <span class="price-label">TTC</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul class="tarif-features">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Curage haute pression jusqu'à 100 bars
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Canalisation jusqu'à 30 mètres
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Évacuation des boues
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Déplacement inclus (Vitry-sur-Seine)
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Carte 2 : Curage Intensif -->
+                <div class="tarif-card">
+                    <div class="tarif-header">
+                        <div class="tarif-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="3" width="15" height="13"></rect>
+                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                            </svg>
+                        </div>
+                        <div class="tarif-info">
+                            <h3 class="tarif-title">Curage Intensif Professionnel</h3>
+                            <div class="tarif-price">
+                                <span class="price-amount">À partir de 199€</span>
+                                <span class="price-label">TTC</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="tarif-features">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Hydrocurage jusqu'à 200 bars
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Canalisations très encrassées
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Élimination racines et tartre
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Copropriétés, restaurants
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Carte 3 : Curage + Inspection -->
+                <div class="tarif-card">
+                    <div class="tarif-header">
+                        <div class="tarif-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 7l-7 5 7 5V7z"></path>
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                            </svg>
+                        </div>
+                        <div class="tarif-info">
+                            <h3 class="tarif-title">Curage + Inspection Caméra</h3>
+                            <div class="tarif-price">
+                                <span class="price-amount">À partir de 199€</span>
+                                <span class="price-label">TTC</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul class="tarif-features">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Inspection caméra avant curage
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Curage haute pression complet
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            <a href="inspection-video-canalisations.html">Contrôle vidéo</a> après intervention
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Rapport vidéo détaillé remis
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Carte 4 : Devis Gratuit -->
+                <div class="tarif-card">
+                    <div class="tarif-header">
+                        <div class="tarif-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <div class="tarif-info">
+                            <h3 class="tarif-title">Devis Gratuit</h3>
+                            <div class="tarif-price">
+                                <span class="price-amount">0€</span>
+                                <span class="price-label">Sans engagement</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul class="tarif-features">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Évaluation sur place gratuite
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Devis détaillé sans engagement
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Tarifs clairs, pas de frais cachés
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Contrats d'entretien disponibles
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="contact.html" class="btn-primary">
+                    Demander un devis gratuit
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container cta-content">
+            <h2>Besoin d'un curage professionnel ? Intervention rapide !</h2>
+            <p>Notre camion hydrocureur arrive en moins de 30 minutes à Vitry-sur-Seine et dans le Val-de-Marne. Disponibles 24h/24, 7j/7.</p>
+            <a href="tel:09 80 80 55 05" class="btn-cta-large">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                Appelez maintenant
+            </a>
+        </div>
+    </section>
+
+    <!-- FAQ Curage -->
+    <section class="section contact-faq faq-accordions">
+        <div class="container">
+            <h2>Questions fréquentes sur le <span class="highlight">curage</span></h2>
+            <div class="faq-grid">
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Quelle est la différence entre débouchage et curage ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong><a href="debouchage-canalisations.html">Le débouchage de canalisation</a> supprime un bouchon ponctuel, le curage nettoie entièrement les canalisations.</strong></p>
+                            <ul class="tarif-features">
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Débouchage</strong> : Utilise un furet ou une pompe pour percer un bouchon localisé. Rapide mais ne nettoie pas les parois</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Curage/Hydrocurage</strong> : Eau haute pression (100-200 bars) qui nettoie intégralement les parois sur 360°</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    Le curage élimine 100% des dépôts : graisses, calcaire, racines, tartre, biofilm
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    Résultat durable : le curage prévient les futurs bouchons pour 2-3 ans
+                                </li>
+                            </ul>
+                            <p>Le curage est recommandé après plusieurs débouchages ou pour l'entretien préventif.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>À quelle fréquence faut-il faire un curage ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>La fréquence recommandée dépend du type d'installation et de l'usage :</strong></p>
+                            <ul class="tarif-features">
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Particuliers</strong> : Tous les 3 à 5 ans en entretien préventif</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Restaurants, cantines</strong> : Tous les ans (accumulation rapide de graisses)</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Copropriétés, immeubles</strong> : Tous les 2 ans pour les colonnes principales</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Réseaux extérieurs avec arbres</strong> : Tous les 2-3 ans (risque de racines)</span>
+                                </li>
+                            </ul>
+                            <p>Un curage préventif régulier évite les bouchons et prolonge la durée de vie de vos canalisations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>L'hydrocurage peut-il endommager les canalisations ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>Non, l'hydrocurage professionnel est sans danger pour vos canalisations en bon état.</strong></p>
+                            <ul class="tarif-features">
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    Nos techniciens ajustent la pression selon le type de canalisation (PVC, fonte, grès, béton)
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    L'eau ne fait que nettoyer les dépôts, elle ne peut pas endommager une canalisation saine
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    Inspection caméra préalable pour détecter d'éventuelles fissures ou zones fragiles
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    Si une canalisation est très ancienne ou fissurée, nous vous le signalons avant curage
+                                </li>
+                            </ul>
+                            <p>L'hydrocurage prolonge la durée de vie de vos canalisations en éliminant les éléments corrosifs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Combien de temps dure un curage de canalisations ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>La durée dépend de la longueur du réseau et du niveau d'encrassement :</strong></p>
+                            <ul class="tarif-features">
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Curage simple maison individuelle</strong> (30m de réseau) : 1h à 1h30</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Curage avec inspection caméra</strong> : 2 à 3 heures (diagnostic avant + contrôle après)</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Curage copropriété/restaurant</strong> : 3 à 5 heures (réseaux plus longs et complexes)</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <span><strong>Curage réseau enterré extérieur</strong> : Demi-journée à journée complète</span>
+                                </li>
+                            </ul>
+                            <p>Nous vous donnons une estimation précise après diagnostic initial sur place.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Le curage est-il efficace contre les racines ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>Oui, l'hydrocurage haute pression est la seule technique efficace contre les racines.</strong></p>
+                            <ul class="tarif-features">
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    La pression de 150-200 bars coupe les racines qui ont pénétré dans les canalisations
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    Utilisation de buses rotatives spéciales avec lames pour racines tenaces
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    Les racines coupées sont évacuées par l'eau de curage et aspirées par le camion
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    Inspection caméra pour localiser précisément les zones infiltrées par les racines
+                                </li>
+                            </ul>
+                            <p>Pour une solution durable, nous recommandons un curage préventif tous les 2-3 ans sur les réseaux avec végétation proche.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo-artiserv-blanc.webp" alt="Artiserv Débouchage">
+                    </div>
+                    <p>
+                        Votre spécialiste du curage, hydrocurage et assainissement à Vitry-sur-Seine et du Val-de-Marne. 
+                        Intervention rapide 24h/24, 7j/7.
+                    </p>                    
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Nos services</h4>
+                    <ul>
+                        <li><a href="debouchage-canalisations.html">Débouchage</a></li>
+                        <li><a href="curage-canalisations.html">Curage</a></li>
+                        <li><a href="inspection-video-canalisations.html">Inspection vidéo</a></li>
+                        <li><a href="pompage-canalisations.html">Pompage</a></li>
+                        <li><span style="color: var(--color-gray-500); cursor: default;">Vidange fosse (bientôt)</span></li>
+                        <li><span style="color: var(--color-gray-500); cursor: default;">Assainissement (bientôt)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="mentions-legales.html">Mentions légales</a></li>
+                        <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <a href="tel:09 80 80 55 05">09 80 80 55 05</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <a href="mailto:artiserv.debouchage@gmail.com">artiserv.debouchage@gmail.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>Vitry-sur-Seine & Val-de-Marne</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 <span class="brand-name brand-name-inverse"><span class="arti">ARTI</span><span class="serv">SERV</span></span> Débouchage - Tous droits réservés</p>
+                <div class="footer-links">
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="politique-confidentialite.html">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta">
+        <a href="tel:09 80 80 55 05" class="floating-btn" aria-label="Appeler">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Barre de consentement cookies -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="cookie-icon">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="1" fill="currentColor"></circle>
+                    <circle cx="8" cy="8" r="1" fill="currentColor"></circle>
+                    <circle cx="16" cy="8" r="1" fill="currentColor"></circle>
+                    <circle cx="9" cy="15" r="1" fill="currentColor"></circle>
+                    <circle cx="15" cy="15" r="1" fill="currentColor"></circle>
+                </svg>
+                <div>
+                    <p><strong>Respect de votre vie privée</strong></p>
+                    <p>Nous utilisons des cookies pour améliorer votre expérience de navigation et analyser notre trafic. 
+                    <a href="politique-confidentialite.html" target="_blank">En savoir plus</a></p>
+                </div>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-btn-reject" id="cookieReject">Refuser</button>
+                <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accepter</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schema FAQ pour Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quelle est la différence entre débouchage et curage ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le débouchage de canalisation supprime un bouchon ponctuel avec un furet ou une pompe, c'est rapide mais ne nettoie pas les parois. Le curage ou hydrocurage utilise de l'eau haute pression (100-200 bars) qui nettoie intégralement les parois sur 360°. Le curage élimine 100% des dépôts : graisses, calcaire, racines, tartre et biofilm. Résultat durable : le curage prévient les futurs bouchons pour 2-3 ans. Le curage est recommandé après plusieurs débouchages ou pour l'entretien préventif."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "À quelle fréquence faut-il faire un curage ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La fréquence recommandée dépend du type d'installation et de l'usage. Particuliers : tous les 3 à 5 ans en entretien préventif. Restaurants et cantines : tous les ans car accumulation rapide de graisses. Copropriétés et immeubles : tous les 2 ans pour les colonnes principales. Réseaux extérieurs avec arbres : tous les 2-3 ans en raison du risque de racines. Un curage préventif régulier évite les bouchons et prolonge la durée de vie des canalisations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "L'hydrocurage peut-il endommager les canalisations ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non, l'hydrocurage professionnel est sans danger pour les canalisations en bon état. Nos techniciens ajustent la pression selon le type de canalisation (PVC, fonte, grès, béton). L'eau ne fait que nettoyer les dépôts, elle ne peut pas endommager une canalisation saine. Une inspection caméra préalable permet de détecter d'éventuelles fissures ou zones fragiles. Si une canalisation est très ancienne ou fissurée, nous le signalons avant curage. L'hydrocurage prolonge la durée de vie des canalisations en éliminant les éléments corrosifs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de temps dure un curage de canalisations ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La durée dépend de la longueur du réseau et du niveau d'encrassement. Curage simple maison individuelle (30m de réseau) : 1h à 1h30. Curage avec inspection caméra : 2 à 3 heures (diagnostic avant plus contrôle après). Curage copropriété ou restaurant : 3 à 5 heures (réseaux plus longs et complexes). Curage réseau enterré extérieur : demi-journée à journée complète. Nous donnons une estimation précise après diagnostic initial sur place."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le curage est-il efficace contre les racines ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, l'hydrocurage haute pression est la seule technique efficace contre les racines. La pression de 150-200 bars coupe les racines qui ont pénétré dans les canalisations. Utilisation de buses rotatives spéciales avec lames pour racines tenaces. Les racines coupées sont évacuées par l'eau de curage et aspirées par le camion. Inspection caméra pour localiser précisément les zones infiltrées par les racines. Pour une solution durable, nous recommandons un curage préventif tous les 2-3 ans sur les réseaux avec végétation proche."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

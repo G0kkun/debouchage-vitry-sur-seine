@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Débouchage Canalisation Vitry-sur-Seine | Artiserv Débouchage</title>
+    <meta name="description" content="Contactez Artiserv Débouchage pour une intervention rapide à Vitry-sur-Seine. Devis gratuit, urgence 24h/24. Formulaire de contact ou appelez-nous directement.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://debouchage-canalisation-vitry-sur-seine.fr/contact.html" />
+
+    <!-- Google Fonts (optimisé) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet"></noscript> 
+        <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-item top-bar-urgent">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Prochain créneau : <strong id="next-slot">Chargement...</strong></span>
+            </div>
+            <div class="top-bar-item top-bar-activity">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+                <span id="technician-activity">Technicien en route sur Vitry-sur-Seine Nord</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo-artiserv-debouchage.webp" alt="Artiserv Débouchage" class="logo-img">
+            </a>
+            
+            <!-- Bouton hamburger -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Menu desktop -->
+            <nav class="nav-menu-desktop">
+                <a href="index.html">Accueil</a>
+                <a href="debouchage-canalisations.html">Débouchage</a>
+                <a href="curage-canalisations.html">Curage</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle">
+                        Autres services
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; margin-left: 4px;">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="inspection-video-canalisations.html">Inspection vidéo</a>
+                        <a href="pompage-canalisations.html">Pompage</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+            
+            <a href="tel:09 80 80 55 05" class="phone-cta">
+                <svg class="phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                09 80 80 55 05
+            </a>
+        </div>
+    </header>
+
+    <!-- Menu Overlay Full Screen -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-overlay-bg"></div>
+        <div class="menu-overlay-content">
+            <button class="menu-close" id="menuClose" aria-label="Fermer le menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            
+            <div class="menu-logo">
+                <img src="images/logo-artiserv-blanc.webp" alt="Artiserv Débouchage">
+            </div>
+            
+            <nav class="menu-nav">
+                <a href="index.html" class="menu-link">
+                    <span class="menu-link-number">01</span>
+                    <span class="menu-link-text">Accueil</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+                <a href="debouchage-canalisations.html" class="menu-link">
+                    <span class="menu-link-number">02</span>
+                    <span class="menu-link-text">Débouchage</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+                <a href="curage-canalisations.html" class="menu-link">
+                    <span class="menu-link-number">03</span>
+                    <span class="menu-link-text">Curage</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+                <div class="menu-link menu-link-dropdown">
+                    <span class="menu-link-number">04</span>
+                    <span class="menu-link-text">Autres services</span>
+                    <span class="menu-link-arrow">▼</span>
+                </div>
+                <div class="menu-submenu">
+                    <a href="inspection-video-canalisations.html" class="menu-sublink">
+                        <span class="menu-link-number">04-1</span>
+                        <span class="menu-sublink-text">Inspection vidéo</span>
+                    </a>
+                    <a href="pompage-canalisations.html" class="menu-sublink">
+                        <span class="menu-link-number">04-2</span>
+                        <span class="menu-sublink-text">Pompage</span>
+                    </a>
+                </div>
+                <a href="contact.html" class="menu-link">
+                    <span class="menu-link-number">05</span>
+                    <span class="menu-link-text">Contact</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+            </nav>
+            
+            <div class="menu-cta">
+                <a href="tel:09 80 80 55 05" class="menu-phone-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <div class="menu-phone-content">
+                        <span class="menu-phone-label">Urgence 24/7</span>
+                        <span class="menu-phone-number">09 80 80 55 05</span>
+                    </div>
+                </a>
+                <div class="menu-location">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Vitry-sur-Seine, 94</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Contact -->
+    <section class="hero-contact">
+        <div class="container">
+            <h1>Contactez <span class="brand-name brand-name-inverse"><span class="arti">ARTI</span><span class="serv">SERV</span></span> Débouchage</h1>
+            <p class="hero-contact-subtitle">Une urgence ? Un devis ? Nous sommes disponibles 24h/24 et 7j/7 pour répondre à toutes vos demandes.</p>
+        </div>
+    </section>
+
+    <!-- Section Formulaire + Infos Contact -->
+    <section class="section contact-main">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Formulaire de contact -->
+                <div class="contact-form-wrapper">
+                    <h2>Demande de devis gratuit</h2>
+                    <p class="form-intro">Remplissez ce formulaire et nous vous recontacterons dans les plus brefs délais pour établir un devis personnalisé.</p>
+                    
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xdanbgbr" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nom">Nom / Prénom <span class="required">*</span></label>
+                                <input type="text" id="nom" name="nom" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row form-row-2">
+                            <div class="form-group">
+                                <label for="email">Email <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="telephone">Téléphone <span class="required">*</span></label>
+                                <input type="tel" id="telephone" name="telephone" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row form-row-2">
+                            <div class="form-group">
+                                <label for="ville">Ville de l'intervention <span class="required">*</span></label>
+                                <input type="text" id="ville" name="ville" placeholder="Ex: Vitry-sur-Seine" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="type-intervention">Type d'intervention <span class="required">*</span></label>
+                                <select id="type-intervention" name="type-intervention" required>
+                                    <option value="">Sélectionnez...</option>
+                                    <option value="debouchage">Débouchage</option>
+                                    <option value="curage">Curage haute pression</option>
+                                    <option value="inspection">Inspection vidéo</option>
+                                    <option value="pompage">Pompage</option>
+                                    <option value="vidange">Vidange fosse septique</option>
+                                    <option value="assainissement">Assainissement</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="message">Description du problème <span class="required">*</span></label>
+                                <textarea id="message" name="message" rows="6" placeholder="Décrivez votre problème..." required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group form-checkbox">
+                                <input type="checkbox" id="rgpd" name="rgpd" required>
+                                <label for="rgpd">J'accepte que mes données soient utilisées pour me recontacter concernant ma demande. <a href="politique-confidentialite.html" target="_blank">Voir notre politique de confidentialité</a> <span class="required">*</span></label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-form-submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13"></path>
+                                <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+                            </svg>
+                            Envoyer ma demande
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Infos de contact -->
+                <div class="contact-info-sidebar">
+                    <div class="contact-info-card">
+                        <h3>Coordonnées</h3>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <div class="contact-info-text">
+                                <strong>Téléphone</strong>
+                                <a href="tel:09 80 80 55 05">09 80 80 55 05</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="contact-info-text">
+                                <strong>Email</strong>
+                                <a href="mailto:artiserv.debouchage@gmail.com">artiserv.debouchage@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <div class="contact-info-text">
+                                <strong>Horaires</strong>
+                                <span>Disponible 24h/24 - 7j/7</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="contact-info-text">
+                                <strong>Zone d'intervention</strong>
+                                <span>Vitry-sur-Seine et Val-de-Marne</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-cta">
+                        <h4>Besoin d'une intervention urgente ?</h4>
+                        <p>Appelez-nous directement pour une prise en charge immédiate</p>
+                        <a href="tel:09 80 80 55 05" class="btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            Appeler maintenant
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section "Comment nous joindre" -->
+    <section class="section section-alt contact-methods">
+        <div class="container">
+            <h2>Comment nous joindre ?</h2>
+            <div class="contact-methods-grid">
+                <div class="contact-method-card">
+                    <div class="method-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </div>
+                    <h3>Par téléphone</h3>
+                    <p>Le moyen le plus rapide pour une intervention d'urgence</p>
+                    <a href="tel:09 80 80 55 05" class="method-link">09 80 80 55 05</a>
+                </div>
+
+                <div class="contact-method-card">
+                    <div class="method-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Par email</h3>
+                    <p>Pour un devis détaillé ou une demande d'information</p>
+                    <a href="mailto:artiserv.debouchage@gmail.com">artiserv.debouchage@gmail.com</a>
+                </div>
+
+                <div class="contact-method-card">
+                    <div class="method-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3>Formulaire en ligne</h3>
+                    <p>Remplissez le formulaire ci-dessus pour une réponse sous 24h</p>
+                    <a href="#contactForm" class="method-link">Accéder au formulaire</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Contact -->
+    <section class="section contact-faq">
+        <div class="container">
+            <h2>Questions fréquentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Quel est votre délai d'intervention ?</h3>
+                    </div>
+                    <p class="faq-answer">Nous intervenons sous 30 minutes pour les urgences à Vitry-sur-Seine et ses alentours. Pour les interventions planifiées, nous nous adaptons à vos disponibilités.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Le devis est-il vraiment gratuit ?</h3>
+                    </div>
+                    <p class="faq-answer">Oui, tous nos devis sont 100% gratuits et sans engagement. Nous nous déplaçons gratuitement pour évaluer votre situation et vous proposer la meilleure solution.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Intervenez-vous vraiment 24h/24 ?</h3>
+                    </div>
+                    <p class="faq-answer">Absolument ! Nos équipes sont disponibles jour et nuit, week-ends et jours fériés compris. Une canalisation bouchée ne choisit pas son moment !</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Quels moyens de paiement acceptez-vous ?</h3>
+                    </div>
+                    <p class="faq-answer">Nous acceptons les paiements par carte bancaire, chèque, espèces et virement. Un devis détaillé vous sera fourni avant toute intervention.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Vos interventions sont-elles garanties ?</h3>
+                    </div>
+                    <p class="faq-answer">Oui, toutes nos interventions sont garanties 1 an. Si le problème réapparaît dans l'année, nous revenons gratuitement.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Dans quelles villes intervenez-vous ?</h3>
+                    </div>
+                    <p class="faq-answer">Nous intervenons sur Vitry-sur-Seine et dans tout le Val-de-Marne (94) : les communes environnantes, et toutes les communes du département.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo-artiserv-blanc.webp" alt="Artiserv Débouchage">
+                    </div>
+                    <p>
+                        Votre spécialiste du débouchage et de l'assainissement à Vitry-sur-Seine et en Val-de-Marne. 
+                        Intervention rapide 24h/24, 7j/7.
+                    </p>                    
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Nos services</h4>
+                    <ul>
+                        <li><a href="debouchage-canalisations.html">Débouchage</a></li>
+                        <li><a href="curage-canalisations.html">Curage</a></li>
+                        <li><a href="inspection-video-canalisations.html">Inspection vidéo</a></li>
+                        <li><a href="pompage-canalisations.html">Pompage</a></li>
+                        <li><span style="color: var(--color-gray-500); cursor: default;">Vidange fosse (bientôt)</span></li>
+                        <li><span style="color: var(--color-gray-500); cursor: default;">Assainissement (bientôt)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="mentions-legales.html">Mentions légales</a></li>
+                        <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <a href="tel:09 80 80 55 05">09 80 80 55 05</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <a href="mailto:artiserv.debouchage@gmail.com">artiserv.debouchage@gmail.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>Vitry-sur-Seine & Val-de-Marne</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 <span class="brand-name brand-name-inverse"><span class="arti">ARTI</span><span class="serv">SERV</span></span> Débouchage - Tous droits réservés</p>
+                <div class="footer-links">
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="politique-confidentialite.html">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta">
+        <a href="tel:09 80 80 55 05" class="floating-btn" aria-label="Appeler maintenant">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Barre de consentement cookies -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="cookie-icon">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="1" fill="currentColor"></circle>
+                    <circle cx="8" cy="8" r="1" fill="currentColor"></circle>
+                    <circle cx="16" cy="8" r="1" fill="currentColor"></circle>
+                    <circle cx="9" cy="15" r="1" fill="currentColor"></circle>
+                    <circle cx="15" cy="15" r="1" fill="currentColor"></circle>
+                </svg>
+                <div>
+                    <p><strong>Respect de votre vie privée</strong></p>
+                    <p>Nous utilisons des cookies pour améliorer votre expérience de navigation et analyser notre trafic. 
+                    <a href="politique-confidentialite.html">En savoir plus</a></p>
+                </div>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-btn-reject" id="cookieReject">Refuser</button>
+                <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accepter</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schema FAQ pour Google - Page Contact -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quel est votre délai d'intervention ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nous intervenons sous 30 minutes pour les urgences à Vitry-sur-Seine et ses alentours. Pour les interventions planifiées, nous nous adaptons à vos disponibilités."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le devis est-il vraiment gratuit ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, tous nos devis sont 100% gratuits et sans engagement. Nous nous déplaçons gratuitement pour évaluer votre situation et vous proposer la meilleure solution."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Intervenez-vous vraiment 24h/24 ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolument ! Nos équipes sont disponibles jour et nuit, week-ends et jours fériés compris. Une canalisation bouchée ne choisit pas son moment !"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels moyens de paiement acceptez-vous ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nous acceptons les paiements par carte bancaire, chèque, espèces et virement. Un devis détaillé vous sera fourni avant toute intervention."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vos interventions sont-elles garanties ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, toutes nos interventions sont garanties 1 an. Si le problème réapparaît dans l'année, nous revenons gratuitement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dans quelles villes intervenez-vous ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nous intervenons sur Vitry-sur-Seine et dans tout le Val-de-Marne (94) : les communes environnantes, et toutes les communes du département."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
