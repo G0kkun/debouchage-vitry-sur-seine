@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pompage Eaux Usées Vitry-sur-Seine | Vidange Cave Inondée 24/7</title>
+    <meta name="description" content="Expert pompage eaux usées dans le Val-de-Marne Vitry-sur-Seine. Vidange cave inondée, évacuation fosse pleine, pompage égouts. Camion pompe professionnel 24/7. ☎️ 09 80 80 55 05">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://debouchage-canalisation-vitry-sur-seine.fr/pompage-canalisations" />
+
+    <!-- Google Fonts (optimisé) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-item top-bar-urgent">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Prochain créneau : <strong id="next-slot">Chargement...</strong></span>
+            </div>
+            <div class="top-bar-item top-bar-activity">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+                <span id="technician-activity">Camion pompe disponible sur Vitry-sur-Seine</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo-artiserv-debouchage.webp" alt="Artiserv Débouchage" class="logo-img">
+            </a>
+            
+            <!-- Bouton hamburger -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Menu desktop -->
+            <nav class="nav-menu-desktop">
+                <a href="index.html">Accueil</a>
+                <a href="debouchage-canalisations.html">Débouchage</a>
+                <a href="curage-canalisations.html">Curage</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle">
+                        Autres services
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; margin-left: 4px;">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="inspection-video-canalisations.html">Inspection vidéo</a>
+                        <a href="pompage-canalisations.html" class="active">Pompage</a>
+                    </div>
+                </div>
+                <a href="contact.html">Contact</a>
+            </nav>
+            
+            <a href="tel:09 80 80 55 05" class="phone-cta">
+                <svg class="phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                09 80 80 55 05
+            </a>
+        </div>
+    </header>
+
+    <!-- Menu Overlay Full Screen -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-overlay-bg"></div>
+        <div class="menu-overlay-content">
+            <button class="menu-close" id="menuClose" aria-label="Fermer le menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            
+            <div class="menu-logo">
+                <img src="images/logo-artiserv-blanc.webp" alt="Artiserv Débouchage">
+            </div>
+            
+            <nav class="menu-nav">
+                <a href="index.html" class="menu-link">
+                    <span class="menu-link-number">01</span>
+                    <span class="menu-link-text">Accueil</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+                <a href="debouchage-canalisations.html" class="menu-link">
+                    <span class="menu-link-number">02</span>
+                    <span class="menu-link-text">Débouchage</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+                <a href="curage-canalisations.html" class="menu-link">
+                    <span class="menu-link-number">03</span>
+                    <span class="menu-link-text">Curage</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+                <div class="menu-link menu-link-dropdown">
+                    <span class="menu-link-number">04</span>
+                    <span class="menu-link-text">Autres services</span>
+                    <span class="menu-link-arrow">▼</span>
+                </div>
+                <div class="menu-submenu">
+                    <a href="inspection-video-canalisations.html" class="menu-sublink">
+                        <span class="menu-link-number">04-1</span>
+                        <span class="menu-sublink-text">Inspection vidéo</span>
+                    </a>
+                    <a href="pompage-canalisations.html" class="menu-sublink">
+                        <span class="menu-link-number">04-2</span>
+                        <span class="menu-sublink-text">Pompage</span>
+                    </a>
+                </div>
+                <a href="contact.html" class="menu-link">
+                    <span class="menu-link-number">05</span>
+                    <span class="menu-link-text">Contact</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+            </nav>
+            
+            <div class="menu-cta">
+                <a href="tel:09 80 80 55 05" class="menu-phone-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <div class="menu-phone-content">
+                        <span class="menu-phone-label">Urgence 24/7</span>
+                        <span class="menu-phone-number">09 80 80 55 05</span>
+                    </div>
+                </a>
+                <div class="menu-location">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Vitry-sur-Seine, 94</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero hero-alt" style="background-image: linear-gradient(135deg, rgba(25, 41, 114, 0.95) 0%, rgba(25, 41, 114, 0.85) 100%), url('images/hero-bg.webp');">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <div class="hero-badges">
+                        <div class="hero-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="3" width="15" height="13"></rect>
+                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                            </svg>
+                            <span>Camion Haute capacité</span>
+                        </div>
+                        <div class="hero-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span>Intervention -30 min</span>
+                        </div>
+                    </div>
+                    
+                    <h1>Pompage et Évacuation d'Eaux Usées dans le Val-de-Marne <span class="highlight">Vitry-sur-Seine</span></h1>
+                    <p class="hero-desc">
+                        Expert en pompage et vidange dans le Val-de-Marne Vitry-sur-Seine et {{preposition_departement}} 94. 
+                        Évacuation rapide de caves inondées, fosses pleines, égouts bouchés. 
+                        <strong>Intervention urgente 24/7</strong> avec notre camion pompe haute capacité.
+                    </p>
+                    
+                    <div class="hero-stats-inline">
+                        <div class="hero-stat-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <div>
+                                <span class="hero-stat-label">Disponibilité</span>
+                                <span class="hero-stat-value">24h/24 - 7j/7</span>
+                            </div>
+                        </div>
+                        <div class="hero-stat-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <div>
+                                <span class="hero-stat-label">Zone</span>
+                                <span class="hero-stat-value">Vitry-sur-Seine + 30km</span>
+                            </div>
+                        </div>
+                        <div class="hero-stat-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <div>
+                                <span class="hero-stat-label">Garantie</span>
+                                <span class="hero-stat-value">100% satisfait</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-cta-group">
+                        <a href="tel:09 80 80 55 05" class="btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            Intervention Urgente
+                        </a>
+                        <a href="contact.html" class="btn-secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            Demander un devis
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="images/Pompage-hero.webp" alt="Pompage eaux usées professionnel dans le Val-de-Marne Vitry-sur-Seine">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Bandeau Orange d'Urgence -->
+    <div class="urgence-banner">
+        <div class="container">
+            <div class="urgence-banner-content">
+                <div class="urgence-banner-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                        <line x1="12" y1="9" x2="12" y2="13"></line>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    <span><strong>Urgence Inondation ?</strong> Intervention immédiate 24/7</span>
+                </div>
+                <div class="urgence-banner-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="3" width="15" height="13"></rect>
+                        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                        <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                        <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                    </svg>
+                    <span>Camion pompe haute capacité disponible</span>
+                </div>
+                <div class="urgence-banner-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span>Arrivée en -30 min sur Vitry-sur-Seine</span>
+                </div>
+                <div class="urgence-banner-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    <span>Devis gratuit par téléphone</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Introduction -->
+    <section class="section">
+        <div class="container">
+            <h2>Spécialiste du <span class="highlight">pompage et évacuation</span> dans le Val-de-Marne Vitry-sur-Seine</h2>
+            <div class="intro-text">
+                <p>
+                    <a href="index.html" style="text-decoration: none; color: inherit;"><strong><span class="brand-name"><span class="arti">ARTI</span><span class="serv">SERV</span></span> Débouchage</strong></a> intervient dans le Val-de-Marne Vitry-sur-Seine et {{preposition_departement}} 94 pour le <strong>pompage et l'évacuation d'eaux usées</strong>. 
+                    Que ce soit pour une cave inondée, une fosse septique pleine, des égouts qui refoulent ou des eaux pluviales stagnantes, 
+                    notre <strong>camion pompe professionnel haute capacité</strong> évacue rapidement et proprement tous types d'eaux.
+                </p>
+                <p>
+                    Nos techniciens qualifiés interviennent <strong>24h/24 et 7j/7</strong> pour les <strong>urgences</strong> (inondations, refoulements) 
+                    avec un délai d'arrivée de moins de 30 minutes sur Vitry-sur-Seine et agglomération. Équipement industriel adapté à toutes les situations : 
+                    pompes submersibles, camion hydrocureur avec cuve, raccordements flexibles pour accès difficiles.
+                </p>
+                <p>
+                    Zone d'intervention : <strong>Vitry-sur-Seine</strong>, Saint-Cyr-sur-Loire, Joué-lès-Tours, Saint-Pierre-des-Corps, La Riche, Saint-Avertin et toutes les communes {{preposition_departement}} 94. 
+                    <strong>Devis gratuit par téléphone</strong>, tarifs transparents sans surprise.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Bento Grid -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2>Nos interventions de <span class="highlight">pompage</span></h2>
+            
+            <div class="services-bento">
+                <!-- Cave Inondée - Large -->
+                <div class="bento-item span-2" style="background-image: url('images/pompage-cave-inondee.webp');" aria-label="Pompage cave inondée dans le Val-de-Marne Vitry-sur-Seine - évacuation urgente">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Vidange Cave Inondée</h3>
+                        <p class="bento-desc">Évacuation rapide d'eau stagnante en sous-sol, cave ou parking inondé. Pompage haute capacité avec camion professionnel. Intervention urgente pour limiter les dégâts matériels et risques sanitaires.</p>
+                    </div>
+                </div>
+                
+                <!-- Fosse Septique - Vertical -->
+                <div class="bento-item span-v-2" style="background-image: url('images/pompage-fosse-septique.webp');" aria-label="Vidange fosse septique dans le Val-de-Marne Vitry-sur-Seine - camion pompe">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Vidange Fosse Septique</h3>
+                        <p class="bento-desc">Pompage complet de fosses septiques et fosses toutes eaux. Évacuation conforme des boues vers station d'épuration agréée. Nettoyage des préfiltres et vérification du bon fonctionnement. Bordereau de suivi des déchets fourni.</p>
+                    </div>
+                </div>
+                
+                <!-- Égouts -->
+                <div class="bento-item" style="background-image: url('images/pompage-egouts.webp');" aria-label="Pompage égouts bouchés dans le Val-de-Marne Vitry-sur-Seine - évacuation refoulement">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Égouts et Refoulements</h3>
+                        <p class="bento-desc">Pompage d'égouts bouchés et évacuation des refoulements d'eaux usées. Intervention d'urgence pour stopper la remontée et évacuer les eaux souillées.</p>
+                    </div>
+                </div>
+                
+                <!-- Eaux Pluviales -->
+                <div class="bento-item" style="background-image: url('images/pompage-eaux-pluviales.webp');" aria-label="Pompage eaux pluviales dans le Val-de-Marne Vitry-sur-Seine - évacuation inondation">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Eaux Pluviales Stagnantes</h3>
+                        <p class="bento-desc">Pompage d'eaux de pluie accumulées sur terrasses, cours, parkings ou voiries. Évacuation rapide après fortes intempéries.</p>
+                    </div>
+                </div>
+                
+                <!-- Bacs à Graisse -->
+                <div class="bento-item" style="background-image: url('images/pompage-bac-graisse.webp');" aria-label="Vidange bac à graisse dans le Val-de-Marne Vitry-sur-Seine - pompage professionnel">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Bacs à Graisse</h3>
+                        <p class="bento-desc">Vidange et nettoyage de bacs à graisse pour restaurants, collectivités et industries. Respect des normes sanitaires, traçabilité complète.</p>
+                    </div>
+                </div>
+                
+                <!-- Pompage Urgence -->
+                <div class="bento-item" style="background-image: url('images/pompage-urgence.webp');" aria-label="Pompage d'urgence dans le Val-de-Marne Vitry-sur-Seine - intervention 24/7">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3 class="bento-title">Pompage d'Urgence</h3>
+                        <p class="bento-desc">Intervention express 24/7 pour toute urgence de pompage : inondation soudaine, canalisation qui déborde, sinistre dégât des eaux. Arrivée -30 min.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pourquoi nous choisir -->
+    <section class="section">
+        <div class="container">
+            <h2>Pourquoi faire appel à <span class="highlight">Artiserv</span> pour le pompage ?</h2>
+            
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Intervention Ultra-Rapide</h3>
+                    <p>En cas d'urgence (cave inondée, refoulement), notre camion pompe arrive en <strong>moins de 30 minutes</strong> sur Vitry-sur-Seine et agglomération. Disponible 24h/24 et 7j/7, week-ends et jours fériés inclus.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Équipement Professionnel Haute Capacité</h3>
+                    <p>Camion hydrocureur avec cuve de grande capacité, pompes submersibles industrielles, flexible de tous diamètres. Matériel adapté à tous types d'interventions et d'accès.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Travail Propre et Conforme</h3>
+                    <p>Évacuation des eaux usées vers station d'épuration agréée. Respect strict des normes sanitaires et environnementales. Bordereau de suivi des déchets fourni pour fosses et bacs à graisse.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Tarifs Transparents et Compétitifs</h3>
+                    <p>Devis gratuit par téléphone avant intervention. Tarifs clairs sans surprise, facturation au volume pompé ou forfait selon la prestation. Paiement sécurisé par CB, chèque ou virement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tarifs -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2>Nos <span class="highlight">tarifs</span> de pompage</h2>
+            <p class="section-intro">Prix indicatifs pour Vitry-sur-Seine et agglomération. Devis gratuit et personnalisé par téléphone.</p>
+            
+            <div class="tarifs-grid">
+                <div class="tarif-card">
+                    <div class="tarif-header">
+                        <div class="tarif-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </div>
+                        <div class="tarif-info">
+                            <h3 class="tarif-title">Vidange Cave Inondée</h3>
+                            <div class="tarif-price">À partir de <strong>150€</strong></div>
+                        </div>
+                    </div>
+                    <ul class="tarif-features">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Pompage eau claire ou légèrement chargée
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Jusqu'à 5m³ inclus
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Déplacement et main d'œuvre compris
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Supplément si eaux très souillées
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="tarif-card tarif-card-featured">
+                    <div class="tarif-badge">Le plus demandé</div>
+                    <div class="tarif-header">
+                        <div class="tarif-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="tarif-info">
+                            <h3 class="tarif-title">Vidange Fosse Septique</h3>
+                            <div class="tarif-price">À partir de <strong>200€</strong></div>
+                        </div>
+                    </div>
+                    <ul class="tarif-features">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Pompage complet de la fosse
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Nettoyage des préfiltres
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Bordereau de suivi des déchets
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Évacuation conforme en station agréée
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="tarif-card">
+                    <div class="tarif-header">
+                        <div class="tarif-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                                <line x1="12" y1="9" x2="12" y2="13"></line>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </div>
+                        <div class="tarif-info">
+                            <h3 class="tarif-title">Pompage Urgence 24/7</h3>
+                            <div class="tarif-price">Sur <strong>devis</strong></div>
+                        </div>
+                    </div>
+                    <ul class="tarif-features">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Intervention nuit, week-end, férié
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Arrivée express -30 min
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Devis gratuit par téléphone avant
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Tarif adapté selon urgence et volume
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem; color: var(--color-gray-600); font-size: 0.95rem;">
+                <strong>Note :</strong> Les tarifs ci-dessus sont donnés à titre indicatif pour Vitry-sur-Seine et peuvent varier selon la distance, l'accès, le volume à pomper et le type d'eaux (claires, usées, boueuses). 
+                Un devis gratuit et détaillé vous sera fourni par téléphone avant toute intervention.
+            </p>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="cta-icon">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <div class="cta-text">
+                    <h2>Besoin d'un pompage urgent dans le Val-de-Marne Vitry-sur-Seine ?</h2>
+                    <p>Appelez-nous maintenant pour une intervention rapide avec notre camion pompe professionnel. Devis gratuit par téléphone.</p>
+                </div>
+                <a href="tel:09 80 80 55 05" class="btn-cta-large">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    09 80 80 55 05
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section class="section contact-faq">
+        <div class="container">
+            <h2>Questions fréquentes sur le <span class="highlight">pompage</span></h2>
+            
+            <div class="faq-accordions">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Quel est le délai d'intervention pour une urgence ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Oui, nous proposons un service d'urgence 24h/24 et 7j/7. En cas d'inondation, notre camion pompe peut intervenir en moins de 30 minutes sur Vitry-sur-Seine et agglomération. Plus l'intervention est rapide, plus les dégâts seront limités.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Quels types d'eaux pouvez-vous pomper ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Notre équipement professionnel nous permet de pomper tous types d'eaux : eaux claires (pluie, inondation), eaux usées domestiques, eaux chargées en boues, graisses, fosses septiques, bacs à graisse. Nous adaptons notre matériel (pompes, diamètre de flexible) selon la nature des eaux à évacuer.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Comment est calculé le tarif de pompage ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Le tarif dépend de plusieurs facteurs : le volume à pomper (en m³), le type d'eaux (claires, usées, chargées), la distance jusqu'au lieu d'intervention, l'accessibilité du site, et le caractère urgent ou non de la prestation. Nous fournissons toujours un devis gratuit et transparent par téléphone avant intervention.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>À quelle fréquence faut-il vidanger une fosse septique ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Une fosse septique doit être vidangée tous les 3 à 4 ans en moyenne pour un foyer de 4 personnes. La fréquence peut varier selon la taille de la fosse, le nombre d'occupants, et l'usage. Des signes comme des odeurs, des refoulements ou un niveau élevé de boues indiquent qu'une vidange est nécessaire.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Que devient l'eau pompée ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Les eaux usées et boues sont évacuées conformément à la réglementation vers une station d'épuration agréée. Pour les professionnels (restaurants, industries), nous fournissons un bordereau de suivi des déchets (BSD) obligatoire pour la traçabilité.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Le pompage suffit-il après une inondation ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Après le pompage, un nettoyage et une désinfection sont indispensables pour éviter moisissures et mauvaises odeurs. Nous proposons ce service en complément. Il est aussi recommandé de faire vérifier l'origine de l'inondation (<a href="https://debouchage-canalisation-vitry-sur-seine.fr/debouchage-canalisations">canalisation bouchée</a>, infiltration) pour éviter la récidive.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo-artiserv-blanc.webp" alt="Artiserv Débouchage">
+                    </div>
+                    <p>
+                        Votre spécialiste du pompage et débouchage dans le Val-de-Marne Vitry-sur-Seine et {{preposition_departement}} 94. 
+                        Intervention rapide 24h/24, 7j/7.
+                    </p>                    
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Nos services</h4>
+                    <ul>
+                        <li><a href="debouchage-canalisations.html">Débouchage</a></li>
+                        <li><a href="curage-canalisations.html">Curage</a></li>
+                        <li><a href="inspection-video-canalisations.html">Inspection vidéo</a></li>
+                        <li><a href="pompage-canalisations.html">Pompage</a></li>
+                        <li><span style="color: var(--color-gray-500); cursor: default;">Vidange fosse (bientôt)</span></li>
+                        <li><span style="color: var(--color-gray-500); cursor: default;">Assainissement (bientôt)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="mentions-legales.html">Mentions légales</a></li>
+                        <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <a href="tel:09 80 80 55 05">09 80 80 55 05</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <a href="/cdn-cgi/l/email-protection#cfaebdbba6bcaabdb9e1abaaada0baaca7aea8aa8fa8a2aea6a3e1aca0a2"><span class="__cf_email__" data-cfemail="3b5a494f52485e494d155f5e59544e58535a5c5e7b5c565a525715585456">[email&#160;protected]</span></a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>Vitry-sur-Seine & 94</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 <span class="brand-name brand-name-inverse"><span class="arti">ARTI</span><span class="serv">SERV</span></span> Débouchage - Tous droits réservés</p>
+                <div class="footer-links">
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="politique-confidentialite.html">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta">
+        <a href="tel:09 80 80 55 05" class="floating-btn" aria-label="Appeler">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Barre de consentement cookies -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="cookie-icon">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="1" fill="currentColor"></circle>
+                    <circle cx="8" cy="8" r="1" fill="currentColor"></circle>
+                    <circle cx="16" cy="8" r="1" fill="currentColor"></circle>
+                    <circle cx="9" cy="15" r="1" fill="currentColor"></circle>
+                    <circle cx="15" cy="15" r="1" fill="currentColor"></circle>
+                </svg>
+                <div>
+                    <p><strong>Respect de votre vie privée</strong></p>
+                    <p>Nous utilisons des cookies pour améliorer votre expérience de navigation et analyser notre trafic. 
+                    <a href="politique-confidentialite.html" target="_blank">En savoir plus</a></p>
+                </div>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-btn-reject" id="cookieReject">Refuser</button>
+                <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accepter</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+    <!-- Cloudflare Email Protection -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+</body>
+</html>
