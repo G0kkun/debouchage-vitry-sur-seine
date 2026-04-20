@@ -793,52 +793,26 @@
             <p style="text-align: center; margin-top: 1rem; color: var(--color-gray-500); font-size: 0.88rem;">
                 Zone de couverture indicative — déplacement inclus dans un rayon de 30&nbsp;km autour de Vitry-sur-Seine.
             </p>
+
+            <div style="margin-top: 1.75rem; text-align: center;">
+                <p style="font-weight: 600; color: var(--color-gray-800); margin-bottom: 0.9rem; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.04em;">Communes desservies</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; max-width: 720px; margin: 0 auto;">
+            <a href="https://debouchage-canalisations-paris.com" target="_blank" rel="noopener" style="display:inline-block;padding:.35rem .9rem;border-radius:20px;background:#e8560a;color:#fff;text-decoration:none;font-size:.88rem;font-weight:600;transition:opacity .2s;">Paris</a>
+            <a href="https://debouchage-canalisation-saint-denis.fr" target="_blank" rel="noopener" style="display:inline-block;padding:.35rem .9rem;border-radius:20px;background:#e8560a;color:#fff;text-decoration:none;font-size:.88rem;font-weight:600;transition:opacity .2s;">Saint-Denis</a>
+            <a href="https://debouchage-canalisation-boulogne-billancourt.fr" target="_blank" rel="noopener" style="display:inline-block;padding:.35rem .9rem;border-radius:20px;background:#e8560a;color:#fff;text-decoration:none;font-size:.88rem;font-weight:600;transition:opacity .2s;">Boulogne-Billancourt</a>
+            <a href="https://debouchage-canalisation-montreuil.fr" target="_blank" rel="noopener" style="display:inline-block;padding:.35rem .9rem;border-radius:20px;background:#e8560a;color:#fff;text-decoration:none;font-size:.88rem;font-weight:600;transition:opacity .2s;">Montreuil</a>
+            <a href="https://debouchage-canalisation-argenteuil.com" target="_blank" rel="noopener" style="display:inline-block;padding:.35rem .9rem;border-radius:20px;background:#e8560a;color:#fff;text-decoration:none;font-size:.88rem;font-weight:600;transition:opacity .2s;">Argenteuil</a>
+            <a href="https://debouchage-canalisation-nanterre.fr" target="_blank" rel="noopener" style="display:inline-block;padding:.35rem .9rem;border-radius:20px;background:#e8560a;color:#fff;text-decoration:none;font-size:.88rem;font-weight:600;transition:opacity .2s;">Nanterre</a>
+            <a href="https://debouchage-canalisation-asnieres-sur-seine.fr" target="_blank" rel="noopener" style="display:inline-block;padding:.35rem .9rem;border-radius:20px;background:#e8560a;color:#fff;text-decoration:none;font-size:.88rem;font-weight:600;transition:opacity .2s;">Asnières-sur-Seine</a>
+            <a href="https://debouchage-canalisation-creteil.fr" target="_blank" rel="noopener" style="display:inline-block;padding:.35rem .9rem;border-radius:20px;background:#e8560a;color:#fff;text-decoration:none;font-size:.88rem;font-weight:600;transition:opacity .2s;">Créteil</a>
+            <a href="https://debouchage-canalisation-colombes.fr" target="_blank" rel="noopener" style="display:inline-block;padding:.35rem .9rem;border-radius:20px;background:#e8560a;color:#fff;text-decoration:none;font-size:.88rem;font-weight:600;transition:opacity .2s;">Colombes</a>
+            <a href="https://debouchage-canalisation-aubervilliers.fr" target="_blank" rel="noopener" style="display:inline-block;padding:.35rem .9rem;border-radius:20px;background:#e8560a;color:#fff;text-decoration:none;font-size:.88rem;font-weight:600;transition:opacity .2s;">Aubervilliers</a>
+            <span style="display:inline-block;padding:.35rem .9rem;border-radius:20px;background:#f1f5f9;color:#475569;font-size:.88rem;">Aulnay-sous-Bois</span>
+            <a href="https://debouchage-canalisation-versailles.fr" target="_blank" rel="noopener" style="display:inline-block;padding:.35rem .9rem;border-radius:20px;background:#e8560a;color:#fff;text-decoration:none;font-size:.88rem;font-weight:600;transition:opacity .2s;">Versailles</a>
+                </div>
+            </div>
         </div>
     </section>
-
-    <script>
-    (function() {
-        var lat = 48.7875;
-        var lng = 2.3933;
-        var ville = "Vitry-sur-Seine";
-        var tel = "09 80 80 55 05";
-
-        var map = L.map('intervention-map', { zoomControl: true, scrollWheelZoom: false })
-                   .setView([lat, lng], 11);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-            maxZoom: 18
-        }).addTo(map);
-
-        // Cercle zone d'intervention (30 km)
-        L.circle([lat, lng], {
-            color: 'var(--color-primary, #e8560a)',
-            fillColor: 'var(--color-primary, #e8560a)',
-            fillOpacity: 0.08,
-            weight: 2,
-            radius: 30000
-        }).addTo(map);
-
-        // Marqueur principal
-        var icon = L.divIcon({
-            className: '',
-            html: '<div style="background:var(--color-primary,#e8560a);width:38px;height:38px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.3);"></div>',
-            iconSize: [38, 38],
-            iconAnchor: [19, 38],
-            popupAnchor: [0, -40]
-        });
-
-        L.marker([lat, lng], { icon: icon })
-         .addTo(map)
-         .bindPopup(
-            '<strong>Artiserv D&eacute;bouchage ' + ville + '</strong><br>' +
-            'Urgence 24h/24 &mdash; 7j/7<br>' +
-            '<a href="tel:' + tel + '" style="color:var(--color-primary,#e8560a);font-weight:700;">' + tel + '</a>'
-         )
-         .openPopup();
-    })();
-    </script>
 
     <!-- Footer -->
     <footer class="footer">
@@ -946,6 +920,51 @@
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Carte zone d'intervention -->
+    <script>
+    (function() {
+        var mapEl = document.getElementById('intervention-map');
+        if (!mapEl) return;
+        var lat = 48.7875;
+        var lng = 2.3933;
+        var ville = "Vitry-sur-Seine";
+        var tel = "09 80 80 55 05";
+        var orange = '#e8560a';
+
+        var map = L.map('intervention-map', { zoomControl: true, scrollWheelZoom: false })
+                   .setView([lat, lng], 11);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '\u00a9 <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            maxZoom: 18
+        }).addTo(map);
+
+        L.circle([lat, lng], {
+            color: orange,
+            fillColor: orange,
+            fillOpacity: 0.08,
+            weight: 2,
+            radius: 30000
+        }).addTo(map);
+
+        var icon = L.divIcon({
+            className: '',
+            html: '<div style="background:' + orange + ';width:38px;height:38px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.3);"></div>',
+            iconSize: [38, 38],
+            iconAnchor: [19, 38],
+            popupAnchor: [0, -40]
+        });
+
+        L.marker([lat, lng], { icon: icon })
+         .addTo(map)
+         .bindPopup(
+            '<strong>Artiserv D\u00e9bouchage ' + ville + '</strong><br>' +
+            'Urgence 24h/24 \u2014 7j/7<br>' +
+            '<a href="tel:' + tel + '" style="color:' + orange + ';font-weight:700;">' + tel + '</a>'
+         )
+         .openPopup();
+    })();
+    </script>
     <!-- Main JS -->
     <script src="js/main.js"></script>
 </body>
