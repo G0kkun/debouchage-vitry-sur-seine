@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifs Débouchage & Assainissement Vitry-sur-Seine | Prix Transparents 2026</title>
+    <meta name="description" content="Tarifs clairs pour débouchage, curage, vidange fosse à Vitry-sur-Seine. Devis gratuit, pas de frais cachés. Intervention d'urgence 24/7. ☎️ 09 80 80 55 05">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://debouchage-canalisation-vitry-sur-seine.fr/tarifs" />
+
+    <!-- Google Fonts (optimisé) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-item top-bar-urgent">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Prochain créneau : <strong id="next-slot">Chargement...</strong></span>
+            </div>
+            <div class="top-bar-item top-bar-activity">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+                <span id="technician-activity">Devis gratuit en cours sur Vitry-sur-Seine</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo-artiserv-debouchage.webp" alt="Artiserv Débouchage" class="logo-img">
+            </a>
+
+            <!-- Bouton hamburger -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Menu desktop -->
+            <nav class="nav-menu-desktop">
+                <div class="nav-dropdown">
+                    <a href="debouchage-canalisations.html" class="nav-dropdown-toggle">
+                        Débouchage
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; margin-left: 4px;">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="debouchage-wc.html">Débouchage WC</a>
+                        <a href="debouchage-evier.html">Débouchage évier</a>
+                        <a href="debouchage-douche.html">Débouchage douche</a>
+                    </div>
+                </div>
+                <a href="curage-canalisations.html">Curage</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle">
+                        Autres services
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; margin-left: 4px;">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="inspection-video-canalisations.html">Inspection vidéo</a>
+                        <a href="pompage-canalisations.html">Pompage</a>
+                        <a href="vidange-fosse-septique.html">Vidange fosse</a>
+                    </div>
+                </div>
+                <a href="tarifs.html" class="active">Tarifs</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <a href="tel:09 80 80 55 05" class="phone-cta">
+                <svg class="phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                09 80 80 55 05
+            </a>
+        </div>
+    </header>
+
+    <!-- Menu Overlay Full Screen -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-overlay-bg"></div>
+        <div class="menu-overlay-content">
+            <button class="menu-close" id="menuClose" aria-label="Fermer le menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <div class="menu-logo">
+                <img src="images/logo-artiserv-blanc.webp" alt="Artiserv Débouchage">
+            </div>
+
+            <nav class="menu-nav">
+                <div class="menu-link menu-link-dropdown">
+                    <span class="menu-link-number">01</span>
+                    <span class="menu-link-text">Débouchage</span>
+                    <span class="menu-link-arrow">▼</span>
+                </div>
+                <div class="menu-submenu">
+                    <a href="debouchage-wc.html" class="menu-sublink">
+                        <span class="menu-link-number">01-1</span>
+                        <span class="menu-sublink-text">Débouchage WC</span>
+                    </a>
+                    <a href="debouchage-evier.html" class="menu-sublink">
+                        <span class="menu-link-number">01-2</span>
+                        <span class="menu-sublink-text">Débouchage évier</span>
+                    </a>
+                    <a href="debouchage-douche.html" class="menu-sublink">
+                        <span class="menu-link-number">01-3</span>
+                        <span class="menu-sublink-text">Débouchage douche</span>
+                    </a>
+                </div>
+                <a href="curage-canalisations.html" class="menu-link">
+                    <span class="menu-link-number">02</span>
+                    <span class="menu-link-text">Curage</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+                <div class="menu-link menu-link-dropdown">
+                    <span class="menu-link-number">03</span>
+                    <span class="menu-link-text">Autres services</span>
+                    <span class="menu-link-arrow">▼</span>
+                </div>
+                <div class="menu-submenu">
+                    <a href="inspection-video-canalisations.html" class="menu-sublink">
+                        <span class="menu-link-number">03-1</span>
+                        <span class="menu-sublink-text">Inspection vidéo</span>
+                    </a>
+                    <a href="pompage-canalisations.html" class="menu-sublink">
+                        <span class="menu-link-number">03-2</span>
+                        <span class="menu-sublink-text">Pompage</span>
+                    </a>
+                    <a href="vidange-fosse-septique.html" class="menu-sublink">
+                        <span class="menu-link-number">03-3</span>
+                        <span class="menu-sublink-text">Vidange fosse</span>
+                    </a>
+                </div>
+                <a href="tarifs.html" class="menu-link">
+                    <span class="menu-link-number">04</span>
+                    <span class="menu-link-text">Tarifs</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+                <a href="contact.html" class="menu-link">
+                    <span class="menu-link-number">05</span>
+                    <span class="menu-link-text">Contact</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
+            </nav>
+
+            <div class="menu-cta">
+                <a href="tel:09 80 80 55 05" class="menu-phone-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <div class="menu-phone-content">
+                        <span class="menu-phone-label">Urgence 24/7</span>
+                        <span class="menu-phone-number">09 80 80 55 05</span>
+                    </div>
+                </a>
+                <div class="menu-location">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Vitry-sur-Seine, 94</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Nos Tarifs <span class="highlight">Transparents</span> à Vitry-sur-Seine</h1>
+                <p class="hero-subtitle">
+                    Des prix clairs et sans surprise pour tous vos travaux de débouchage, curage et assainissement à Vitry-sur-Seine.
+                    Devis gratuit par téléphone, intervention rapide, aucun frais caché.
+                    Paiement après intervention réussie.
+                </p>
+
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                        <span>Devis gratuit</span>
+                    </div>
+                    <div class="hero-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                        <span>Pas de frais cachés</span>
+                    </div>
+                    <div class="hero-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                        <span>Prix fixé avant travaux</span>
+                    </div>
+                    <div class="hero-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                        <span>Paiement après intervention</span>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="tel:09 80 80 55 05" class="btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        Devis gratuit par téléphone
+                    </a>
+                    <a href="contact.html" class="btn-secondary">
+                        Demande écrite
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <picture>
+                    <img src="images/tarifs-hero.webp" alt="Tarifs professionnels débouchage à Vitry-sur-Seine">
+                </picture>
+
+                <div class="floating-badge floating-badge-1">
+                    <div class="badge-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11l3 3L22 4"></path>
+                            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path>
+                        </svg>
+                    </div>
+                    <div class="badge-text">
+                        <span class="badge-label">Devis</span>
+                        <span class="badge-value">Gratuit</span>
+                    </div>
+                </div>
+
+                <div class="floating-badge floating-badge-2">
+                    <div class="badge-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"></path>
+                        </svg>
+                    </div>
+                    <div class="badge-text">
+                        <span class="badge-label">Prix</span>
+                        <span class="badge-value">Fixes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bandeau Orange -->
+    <div class="emergency-banner">
+        <div class="container emergency-container">
+            <div class="emergency-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M9 11l3 3L22 4"></path>
+                    <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path>
+                </svg>
+                <span>Devis gratuit</span>
+            </div>
+            <div class="emergency-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"></path>
+                </svg>
+                <span>Prix transparents</span>
+            </div>
+            <div class="emergency-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Intervention rapide</span>
+            </div>
+            <div class="emergency-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span>Garantie satisfaction</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Introduction -->
+    <section class="section">
+        <div class="container">
+            <h2>Notre politique de <span class="highlight">tarification transparente</span></h2>
+
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                Chez <a href="index.html" style="text-decoration: none; color: inherit;"><strong><span class="brand-name"><span class="arti">ARTI</span><span class="serv">SERV</span></span> Débouchage</strong></a>, nous croyons en une <strong>tarification claire et honnête</strong>.
+                Avant toute intervention, nous établissons un <strong>devis gratuit détaillé</strong> par téléphone ou sur place.
+                Le prix convenu ne change pas, sauf demande expresse de votre part pour des travaux supplémentaires.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                Nos tarifs sont calculés selon plusieurs critères : <strong>la nature de l'intervention</strong> (débouchage simple, curage haute pression, vidange fosse),
+                <strong>l'accessibilité</strong> (facilité d'accès aux canalisations), <strong>le degré d'obstruction</strong>, et <strong>l'urgence</strong> de la situation.
+                Nous vous expliquons toujours en détail ce qui justifie le prix proposé.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+                <strong>Aucun frais caché.</strong> Le devis inclut le déplacement, le diagnostic, la main d'œuvre, le matériel et l'évacuation des déchets si nécessaire.
+                Vous payez uniquement après l'intervention réussie. Plusieurs moyens de paiement acceptés : espèces, chèque, virement, CB.
+            </p>
+        </div>
+    </section>
+
+    <!-- Tableau récapitulatif des tarifs -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2>Tableau récapitulatif de nos <span class="highlight">tarifs</span></h2>
+            <p style="text-align: center; margin: 0 auto 2.5rem; max-width: 700px; color: var(--color-gray-700); font-size: 1.05rem;">
+                Devis gratuit avant toute intervention &middot; Déplacement inclus &middot; Prix TTC
+            </p>
+
+            <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                <table style="width: 100%; border-collapse: collapse; font-family: inherit; font-size: 0.95rem;">
+
+                    <!-- DÉBOUCHAGE -->
+                    <tr>
+                        <th colspan="3" style="background: var(--color-primary); color: #fff; padding: 0.9rem 1.25rem; text-align: left; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.02em;">
+                            Débouchage de canalisations
+                        </th>
+                    </tr>
+                    <tr style="background: #fff;">
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 500; color: var(--color-gray-900, #111);">Évier / Lavabo / Douche</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; color: var(--color-gray-600, #666); font-size: 0.88rem;">Débouchage mécanique ou furet</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 700; color: var(--color-primary); text-align: right; white-space: nowrap;">À partir de 149&nbsp;€</td>
+                    </tr>
+                    <tr style="background: #fafafa;">
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 500; color: var(--color-gray-900, #111);">WC / Toilettes</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; color: var(--color-gray-600, #666); font-size: 0.88rem;">Ventouse, furet ou pompe manuelle</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 700; color: var(--color-primary); text-align: right; white-space: nowrap;">À partir de 149&nbsp;€</td>
+                    </tr>
+                    <tr style="background: #fff;">
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 500; color: var(--color-gray-900, #111);">Colonne eaux usées</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; color: var(--color-gray-600, #666); font-size: 0.88rem;">Furet électrique professionnel</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 700; color: var(--color-primary); text-align: right; white-space: nowrap;">À partir de 149&nbsp;€</td>
+                    </tr>
+                    <tr style="background: #fafafa;">
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 2px solid #ddd; font-weight: 500; color: var(--color-gray-900, #111);">Égout / Regard</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 2px solid #ddd; color: var(--color-gray-600, #666); font-size: 0.88rem;">Canalisation principale ou raccord</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 2px solid #ddd; font-weight: 700; color: var(--color-primary); text-align: right; white-space: nowrap;">À partir de 149&nbsp;€</td>
+                    </tr>
+
+                    <!-- CURAGE -->
+                    <tr>
+                        <th colspan="3" style="background: var(--color-primary); color: #fff; padding: 0.9rem 1.25rem; text-align: left; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.02em;">
+                            Curage haute pression
+                        </th>
+                    </tr>
+                    <tr style="background: #fff;">
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 500; color: var(--color-gray-900, #111);">Curage simple particulier</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; color: var(--color-gray-600, #666); font-size: 0.88rem;">Hydrocurage jusqu'à 30&nbsp;m, 100&nbsp;bars</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 700; color: var(--color-primary); text-align: right; white-space: nowrap;">À partir de 120&nbsp;€</td>
+                    </tr>
+                    <tr style="background: #fafafa;">
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 500; color: var(--color-gray-900, #111);">Curage intensif professionnel</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; color: var(--color-gray-600, #666); font-size: 0.88rem;">Jusqu'à 200&nbsp;bars, canalisations très encrassées</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 700; color: var(--color-primary); text-align: right; white-space: nowrap;">À partir de 199&nbsp;€</td>
+                    </tr>
+                    <tr style="background: #fff;">
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 2px solid #ddd; font-weight: 500; color: var(--color-gray-900, #111);">Curage + inspection caméra</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 2px solid #ddd; color: var(--color-gray-600, #666); font-size: 0.88rem;">Curage haute pression + contrôle vidéo + rapport</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 2px solid #ddd; font-weight: 700; color: var(--color-primary); text-align: right; white-space: nowrap;">À partir de 199&nbsp;€</td>
+                    </tr>
+
+                    <!-- INSPECTION VIDÉO -->
+                    <tr>
+                        <th colspan="3" style="background: var(--color-primary); color: #fff; padding: 0.9rem 1.25rem; text-align: left; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.02em;">
+                            Inspection vidéo
+                        </th>
+                    </tr>
+                    <tr style="background: #fff;">
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 500; color: var(--color-gray-900, #111);">Inspection simple</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; color: var(--color-gray-600, #666); font-size: 0.88rem;">Caméra HD jusqu'à 30&nbsp;m, rapport photos inclus</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 700; color: var(--color-primary); text-align: right; white-space: nowrap;">À partir de 120&nbsp;€</td>
+                    </tr>
+                    <tr style="background: #fafafa;">
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 500; color: var(--color-gray-900, #111);">Inspection complète + rapport</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; color: var(--color-gray-600, #666); font-size: 0.88rem;">Réseau complet, enregistrement HD, fichier vidéo remis</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 700; color: var(--color-primary); text-align: right; white-space: nowrap;">À partir de 159&nbsp;€</td>
+                    </tr>
+                    <tr style="background: #fff;">
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 2px solid #ddd; font-weight: 500; color: var(--color-gray-900, #111);">Réseaux extérieurs longue portée</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 2px solid #ddd; color: var(--color-gray-600, #666); font-size: 0.88rem;">Caméra jusqu'à 100&nbsp;m, localisation GPS des anomalies</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 2px solid #ddd; font-weight: 700; color: var(--color-primary); text-align: right; white-space: nowrap;">À partir de 239&nbsp;€</td>
+                    </tr>
+
+                    <!-- POMPAGE & VIDANGE -->
+                    <tr>
+                        <th colspan="3" style="background: var(--color-primary); color: #fff; padding: 0.9rem 1.25rem; text-align: left; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.02em;">
+                            Pompage &amp; Vidange
+                        </th>
+                    </tr>
+                    <tr style="background: #fff;">
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 500; color: var(--color-gray-900, #111);">Vidange cave inondée</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; color: var(--color-gray-600, #666); font-size: 0.88rem;">Jusqu'à 5&nbsp;m³ inclus, déplacement compris</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 700; color: var(--color-primary); text-align: right; white-space: nowrap;">À partir de 150&nbsp;€</td>
+                    </tr>
+                    <tr style="background: #fafafa;">
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 500; color: var(--color-gray-900, #111);">Vidange fosse septique</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; color: var(--color-gray-600, #666); font-size: 0.88rem;">Pompage complet + BSD officiel + traitement centre agréé</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 700; color: var(--color-primary); text-align: right; white-space: nowrap;">À partir de 200&nbsp;€</td>
+                    </tr>
+                    <tr style="background: #fff;">
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 2px solid #ddd; font-weight: 500; color: var(--color-gray-900, #111);">Pompage urgence 24/7</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 2px solid #ddd; color: var(--color-gray-600, #666); font-size: 0.88rem;">Nuit, week-end et jours fériés</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 2px solid #ddd; font-weight: 700; color: var(--color-gray-700, #555); text-align: right; white-space: nowrap;">Sur devis</td>
+                    </tr>
+
+                    <!-- SUPPLÉMENTS HORAIRES -->
+                    <tr>
+                        <th colspan="3" style="background: #444; color: #fff; padding: 0.9rem 1.25rem; text-align: left; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.02em;">
+                            Suppléments horaires
+                        </th>
+                    </tr>
+                    <tr style="background: #fff;">
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 500; color: var(--color-gray-900, #111);">Horaires normaux</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; color: var(--color-gray-600, #666); font-size: 0.88rem;">Lun–Ven, 8h–18h</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 600; color: var(--color-gray-700, #555); text-align: right; white-space: nowrap;">Tarif standard</td>
+                    </tr>
+                    <tr style="background: #fafafa;">
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 500; color: var(--color-gray-900, #111);">Soirée &amp; Samedi</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; color: var(--color-gray-600, #666); font-size: 0.88rem;">18h–22h et Samedi</td>
+                        <td style="padding: 0.8rem 1.25rem; border-bottom: 1px solid #eee; font-weight: 700; color: var(--color-primary); text-align: right; white-space: nowrap;">+ 30&nbsp;%</td>
+                    </tr>
+                    <tr style="background: #fff;">
+                        <td style="padding: 0.8rem 1.25rem; font-weight: 500; color: var(--color-gray-900, #111);">Nuit / Dimanche / Férié</td>
+                        <td style="padding: 0.8rem 1.25rem; color: var(--color-gray-600, #666); font-size: 0.88rem;">22h–8h, Dimanche et jours fériés</td>
+                        <td style="padding: 0.8rem 1.25rem; font-weight: 700; color: var(--color-primary); text-align: right; white-space: nowrap;">+ 50&nbsp;%</td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--color-gray-500, #999); font-size: 0.88rem; font-style: italic;">
+                Tarifs indicatifs pour Vitry-sur-Seine (94). Prix susceptibles de varier selon l'accessibilité et le volume. Devis gratuit avant toute intervention.
+            </p>
+        </div>
+    </section>
+
+    <!-- Ce qui influence le prix -->
+    <section class="section">
+        <div class="container">
+            <h2>Ce qui <span class="highlight">influence le tarif</span></h2>
+
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>Type d'Intervention</h3>
+                    <p>Un débouchage simple d'évier est moins coûteux qu'un curage complet à haute pression ou une vidange de fosse. La complexité technique et le matériel utilisé varient selon la nature du problème.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Accessibilité</h3>
+                    <p>Un accès facile aux canalisations (regard au niveau du sol, sous-sol accessible) permet une intervention plus rapide. Un accès difficile (toit, vide sanitaire étroit) nécessite plus de temps et d'équipement.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Degré d'Obstruction</h3>
+                    <p>Un bouchon récent et localisé se résout rapidement. Une obstruction ancienne avec accumulation de calcaire, graisses ou racines nécessite plus de temps et parfois plusieurs techniques complémentaires.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Urgence & Horaires</h3>
+                    <p>Une intervention programmée en journée (lun-ven 8h-18h) bénéficie du tarif standard. Les interventions en soirée, nuit, weekend ou jours fériés impliquent une majoration pour couvrir l'astreinte.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ce qui est inclus -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2>Ce qui est <span class="highlight">inclus dans nos tarifs</span></h2>
+
+            <div class="process-container">
+                <div class="process-step">
+                    <div class="step-number">✓</div>
+                    <h3>Déplacement</h3>
+                    <p>Le déplacement de notre technicien à votre domicile dans un rayon de 30km autour de Vitry-sur-Seine est inclus. Au-delà, un supplément kilométrique de 0,50€/km s'applique.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">✓</div>
+                    <h3>Diagnostic</h3>
+                    <p>L'analyse de la situation, le repérage du bouchon et l'évaluation de la meilleure technique d'intervention sont inclus dans le prix de l'intervention.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">✓</div>
+                    <h3>Main d'Œuvre</h3>
+                    <p>Le temps de travail du technicien, la mise en œuvre de la solution, les tests de bon fonctionnement et le nettoyage de la zone d'intervention sont compris.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">✓</div>
+                    <h3>Matériel & Produits</h3>
+                    <p>L'utilisation du matériel professionnel (furets, pompes, hydrocureur, caméra) et les produits nécessaires sont inclus, sauf pièces de remplacement (joint, siphon...).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container cta-content">
+            <h2>Besoin d'un devis personnalisé ? Appelez-nous maintenant !</h2>
+            <p>Un technicien vous répond immédiatement et vous établit un devis gratuit par téléphone. Prix fixé avant intervention, aucune surprise.</p>
+            <a href="tel:09 80 80 55 05" class="btn-cta-large">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                09 80 80 55 05 - Devis gratuit
+            </a>
+        </div>
+    </section>
+
+    <!-- FAQ Tarifs -->
+    <section class="section contact-faq faq-accordions">
+        <div class="container">
+            <h2>Questions fréquentes sur <span class="highlight">nos tarifs</span></h2>
+            <div class="faq-grid">
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Le devis est-il vraiment gratuit et sans engagement ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>Oui, notre devis est 100% gratuit et sans aucun engagement de votre part.</strong></p>
+                            <p>Vous pouvez nous appeler au <strong>09 80 80 55 05</strong> pour décrire votre problème. Notre technicien vous pose quelques questions (type de canalisation, symptômes, accès) et vous établit une fourchette de prix immédiatement par téléphone. Si le problème nécessite un diagnostic sur place, nous nous déplaçons gratuitement pour établir un devis écrit détaillé. Vous êtes libre d'accepter ou de refuser, sans aucun frais.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Le prix peut-il augmenter en cours d'intervention ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>Le prix convenu avant intervention ne change pas, sauf si vous demandez des travaux supplémentaires.</strong></p>
+                            <p>Avant de commencer, nous vous expliquons exactement ce que nous allons faire et vous validez le prix. Si, en cours d'intervention, nous découvrons un problème imprévu (canalisation cassée, racines dans le réseau, seconde obstruction), nous vous en informons immédiatement et vous proposons un nouveau devis pour ce travail supplémentaire. <strong>Vous décidez si vous voulez poursuivre ou non.</strong> Nous ne facturons jamais de "surprise" en fin d'intervention.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Quels moyens de paiement acceptez-vous ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>Nous acceptons tous les moyens de paiement courants pour votre confort.</strong></p>
+                            <ul class="tarif-features">
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <strong>Espèces</strong> : paiement immédiat après intervention
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <strong>Chèque</strong> : à l'ordre d'Artiserv Débouchage
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <strong>Carte bancaire</strong> : terminal de paiement mobile sur place
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <strong>Virement bancaire</strong> : sur facture avec RIB fourni
+                                </li>
+                            </ul>
+                            <p>Vous recevez une facture détaillée dans tous les cas, que vous pouvez utiliser pour une demande de remboursement auprès de votre assurance habitation si nécessaire.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Mon assurance peut-elle prendre en charge l'intervention ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>Oui, de nombreuses assurances habitation couvrent tout ou partie des frais de débouchage.</strong></p>
+                            <p>Vérifiez votre contrat d'assurance habitation : la plupart des assurances "multirisques habitation" incluent une garantie "dégât des eaux" ou "assistance dépannage d'urgence" qui peut couvrir le débouchage de canalisations, surtout en cas d'urgence (WC bouchés, refoulement d'eaux usées).</p>
+                            <p><strong>Notre conseil :</strong> Appelez votre assureur AVANT notre intervention pour connaître les conditions de prise en charge (franchise, plafond, documents à fournir). Nous vous remettons systématiquement une facture détaillée conforme aux exigences des assurances. Certains contrats prévoient un remboursement jusqu'à 500€ par an pour ce type d'intervention.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>Proposez-vous des tarifs réduits pour les copropriétés ou entreprises ?</h3>
+                        <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>Oui, nous proposons des tarifs préférentiels et des contrats d'entretien pour les professionnels et copropriétés.</strong></p>
+                            <ul class="tarif-features">
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <strong>Copropriétés</strong> : tarif dégressif pour interventions multiples (plusieurs appartements/lots)
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <strong>Restaurants/Commerces</strong> : contrat d'entretien annuel avec curage préventif inclus
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <strong>Entreprises</strong> : facturation mensuelle possible, devis sur mesure selon vos besoins
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    <strong>Syndics</strong> : intervention prioritaire, rapports détaillés pour AG, facilités de paiement
+                                </li>
+                            </ul>
+                            <p>Contactez-nous au 09 80 80 55 05 pour un devis personnalisé adapté à vos besoins professionnels.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo-artiserv-blanc.webp" alt="Artiserv Débouchage">
+                    </div>
+                    <p>
+                        Des tarifs transparents et sans surprise pour tous vos travaux de débouchage à Vitry-sur-Seine.
+                        Devis gratuit, intervention rapide, paiement après satisfaction.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Nos services</h4>
+                    <ul>
+                        <li><a href="debouchage-canalisations.html">Débouchage</a></li>
+                        <li><a href="curage-canalisations.html">Curage</a></li>
+                        <li><a href="inspection-video-canalisations.html">Inspection vidéo</a></li>
+                        <li><a href="pompage-canalisations.html">Pompage</a></li>
+                        <li><a href="vidange-fosse-septique.html">Vidange fosse</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="tarifs.html">Tarifs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="mentions-legales.html">Mentions légales</a></li>
+                        <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <a href="tel:09 80 80 55 05">09 80 80 55 05</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <a href="mailto:artiserv.debouchage@gmail.com">artiserv.debouchage@gmail.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>Vitry-sur-Seine & Val-de-Marne</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 <span class="brand-name brand-name-inverse"><span class="arti">ARTI</span><span class="serv">SERV</span></span> Débouchage - Tous droits réservés</p>
+                <div class="footer-links">
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="politique-confidentialite.html">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta">
+        <a href="tel:09 80 80 55 05" class="floating-btn" aria-label="Appeler">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Barre de consentement cookies -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="cookie-icon">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="1" fill="currentColor"></circle>
+                    <circle cx="8" cy="8" r="1" fill="currentColor"></circle>
+                    <circle cx="16" cy="8" r="1" fill="currentColor"></circle>
+                    <circle cx="9" cy="15" r="1" fill="currentColor"></circle>
+                    <circle cx="15" cy="15" r="1" fill="currentColor"></circle>
+                </svg>
+                <div>
+                    <p><strong>Respect de votre vie privée</strong></p>
+                    <p>Nous utilisons des cookies pour améliorer votre expérience de navigation et analyser notre trafic.
+                    <a href="politique-confidentialite.html" target="_blank">En savoir plus</a></p>
+                </div>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-btn-reject" id="cookieReject">Refuser</button>
+                <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accepter</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

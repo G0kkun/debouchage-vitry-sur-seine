@@ -1948,6 +1948,11 @@ p { margin-bottom: 1rem; }
     transform: translateX(0);
 }
 
+.menu-link-dropdown .menu-link-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .menu-cta {
     margin: 2rem 0;
     opacity: 0;

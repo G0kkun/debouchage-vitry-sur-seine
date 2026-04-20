@@ -66,8 +66,19 @@
             
             <!-- Menu desktop -->
             <nav class="nav-menu-desktop">
-                <a href="index.html" class="active">Accueil</a>
-                <a href="debouchage-canalisations.html">Débouchage</a>
+                <div class="nav-dropdown">
+                    <a href="debouchage-canalisations.html" class="nav-dropdown-toggle">
+                        Débouchage
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; margin-left: 4px;">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="debouchage-wc.html">Débouchage WC</a>
+                        <a href="debouchage-evier.html">Débouchage évier</a>
+                        <a href="debouchage-douche.html">Débouchage douche</a>
+                    </div>
+                </div>
                 <a href="curage-canalisations.html">Curage</a>
                 <div class="nav-dropdown">
                     <a href="#" class="nav-dropdown-toggle">
@@ -79,8 +90,10 @@
                     <div class="nav-dropdown-menu">
                         <a href="inspection-video-canalisations.html">Inspection vidéo</a>
                         <a href="pompage-canalisations.html">Pompage</a>
+                        <a href="vidange-fosse-septique.html">Vidange fosse</a>
                     </div>
                 </div>
+                <a href="tarifs.html">Tarifs</a>
                 <a href="contact.html">Contact</a>
             </nav>
             
@@ -109,36 +122,54 @@
             </div>
             
             <nav class="menu-nav">
-                <a href="index.html" class="menu-link">
+                <div class="menu-link menu-link-dropdown">
                     <span class="menu-link-number">01</span>
-                    <span class="menu-link-text">Accueil</span>
-                    <span class="menu-link-arrow">→</span>
-                </a>
-                <a href="debouchage-canalisations.html" class="menu-link">
-                    <span class="menu-link-number">02</span>
                     <span class="menu-link-text">Débouchage</span>
-                    <span class="menu-link-arrow">→</span>
-                </a>
+                    <span class="menu-link-arrow">▼</span>
+                </div>
+                <div class="menu-submenu">
+                    <a href="debouchage-wc.html" class="menu-sublink">
+                        <span class="menu-link-number">01-1</span>
+                        <span class="menu-sublink-text">Débouchage WC</span>
+                    </a>
+                    <a href="debouchage-evier.html" class="menu-sublink">
+                        <span class="menu-link-number">01-2</span>
+                        <span class="menu-sublink-text">Débouchage évier</span>
+                    </a>
+                    <a href="debouchage-douche.html" class="menu-sublink">
+                        <span class="menu-link-number">01-3</span>
+                        <span class="menu-sublink-text">Débouchage douche</span>
+                    </a>
+                </div>
                 <a href="curage-canalisations.html" class="menu-link">
-                    <span class="menu-link-number">03</span>
+                    <span class="menu-link-number">02</span>
                     <span class="menu-link-text">Curage</span>
                     <span class="menu-link-arrow">→</span>
                 </a>
                 <div class="menu-link menu-link-dropdown">
-                    <span class="menu-link-number">04</span>
+                    <span class="menu-link-number">03</span>
                     <span class="menu-link-text">Autres services</span>
                     <span class="menu-link-arrow">▼</span>
                 </div>
                 <div class="menu-submenu">
                     <a href="inspection-video-canalisations.html" class="menu-sublink">
-                        <span class="menu-link-number">04-1</span>
+                        <span class="menu-link-number">03-1</span>
                         <span class="menu-sublink-text">Inspection vidéo</span>
                     </a>
                     <a href="pompage-canalisations.html" class="menu-sublink">
-                        <span class="menu-link-number">04-2</span>
+                        <span class="menu-link-number">03-2</span>
                         <span class="menu-sublink-text">Pompage</span>
                     </a>
+                    <a href="vidange-fosse-septique.html" class="menu-sublink">
+                        <span class="menu-link-number">03-3</span>
+                        <span class="menu-sublink-text">Vidange fosse</span>
+                    </a>
                 </div>
+                <a href="tarifs.html" class="menu-link">
+                    <span class="menu-link-number">04</span>
+                    <span class="menu-link-text">Tarifs</span>
+                    <span class="menu-link-arrow">→</span>
+                </a>
                 <a href="contact.html" class="menu-link">
                     <span class="menu-link-number">05</span>
                     <span class="menu-link-text">Contact</span>
@@ -660,6 +691,7 @@
                     <h4>Informations</h4>
                     <ul>
                         <li><a href="index.html">Accueil</a></li>
+                        <li><a href="tarifs.html">Tarifs</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="mentions-legales.html">Mentions légales</a></li>
                         <li><a href="politique-confidentialite.html">Confidentialité</a></li>
