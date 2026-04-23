@@ -31,84 +31,57 @@ if (menuToggle && menuOverlay) {
         }
     });
     
-    // MODIFIÉ : Fermer le menu seulement pour les liens NORMAUX, pas le dropdown
+    // Fermer le menu sur les liens normaux (pas les dropdowns)
     const menuLinks = menuOverlay.querySelectorAll('.menu-link:not(.menu-link-dropdown)');
-    menuLinks.forEach(link => {
+    menuLinks.forEach(function(link) {
         link.addEventListener('click', function() {
             menuOverlay.classList.remove('active');
             document.body.style.overflow = '';
         });
     });
-    
-    // NOUVEAU : Gestion du sous-menu "Autres services"
-    const dropdownToggle = document.querySelector('.menu-link-dropdown');
-    const submenu = document.querySelector('.menu-submenu');
-    
-    if (dropdownToggle && submenu) {
-        dropdownToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            // Toggle le sous-menu
-            submenu.classList.toggle('active');
-            
-            // Change la flèche
-            const arrow = this.querySelector('.menu-link-arrow');
-            if (arrow) {
-                arrow.textContent = submenu.classList.contains('active') ? '▲' : '▼';
-            }
-        });
-        
-        // Les liens du sous-menu ferment le menu normalement
-        const sublinks = submenu.querySelectorAll('.menu-sublink');
-        sublinks.forEach(link => {
-            link.addEventListener('click', function() {
-                menuOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-    }
-}
 
-    // ===================================
-// MENU MOBILE - SOUS-MENU "AUTRES SERVICES"
-// ===================================
-document.addEventListener('DOMContentLoaded', function() {
-    const dropdownToggle = document.querySelector('.menu-link-dropdown');
-    const submenu = document.querySelector('.menu-submenu');
-    
-    if (dropdownToggle && submenu) {
-        // Gérer le clic/touch
-        dropdownToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            // Toggle le sous-menu
-            submenu.classList.toggle('active');
-            
-            // Change la flèche
-            const arrow = this.querySelector('.menu-link-arrow');
-            if (arrow) {
-                arrow.textContent = submenu.classList.contains('active') ? '▲' : '▼';
-            }
-            
-            console.log('Submenu toggled:', submenu.classList.contains('active')); // Debug
-        });
-        
-        // Support touch pour mobile
-        dropdownToggle.addEventListener('touchend', function(e) {
-            e.preventDefault();
-            submenu.classList.toggle('active');
-            
-            const arrow = this.querySelector('.menu-link-arrow');
-            if (arrow) {
-                arrow.textContent = submenu.classList.contains('active') ? '▲' : '▼';
-            }
-        });
-    } else {
-        console.error('Menu dropdown ou submenu non trouvé'); // Debug
-    }
-});
+    // Gestion des dropdowns (Débouchage + Autres services)
+    const dropdownToggles = menuOverlay.querySelectorAll('.menu-link-dropdown');
+
+    dropdownToggles.forEach(function(dropdownToggle) {
+        const submenu = dropdownToggle.nextElementSibling;
+
+        if (submenu && submenu.classList.contains('menu-submenu')) {
+            dropdownToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Fermer les autres sous-menus ouverts
+                dropdownToggles.forEach(function(other) {
+                    if (other !== dropdownToggle) {
+                        const otherSubmenu = other.nextElementSibling;
+                        if (otherSubmenu && otherSubmenu.classList.contains('menu-submenu')) {
+                            otherSubmenu.classList.remove('active');
+                            const otherArrow = other.querySelector('.menu-link-arrow');
+                            if (otherArrow) otherArrow.textContent = '▼';
+                        }
+                    }
+                });
+
+                // Toggle ce sous-menu
+                submenu.classList.toggle('active');
+                const arrow = this.querySelector('.menu-link-arrow');
+                if (arrow) {
+                    arrow.textContent = submenu.classList.contains('active') ? '▲' : '▼';
+                }
+            });
+
+            // Les sous-liens ferment le menu
+            const sublinks = submenu.querySelectorAll('.menu-sublink');
+            sublinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    menuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    });
+}
     // ===================================
     // 2. CARTE LEAFLET
     // ===================================
