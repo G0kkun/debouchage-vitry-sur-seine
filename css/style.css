@@ -2180,11 +2180,20 @@ p { margin-bottom: 1rem; }
     }
     
     .menu-link {
-        font-size: 1.8rem;
-        padding: 1rem 1.5rem;
+        font-size: 1.25rem;
+        padding: 0.55rem 1.5rem;
         gap: 1rem;
     }
-    
+
+    .menu-sublink {
+        font-size: 1rem;
+        padding: 0.45rem 2rem;
+    }
+
+    .menu-nav {
+        margin: 1rem 0;
+    }
+
     .menu-link-number {
         font-size: 1rem;
         min-width: 30px;
